@@ -1,2 +1,12 @@
-<!--pages/coupon/coupon.wxml-->
-<text>pages/coupon/coupon.wxml</text>
+<view class="coupon">
+  <navigator>
+    <view class="coupon-item">
+      <view class="item-title">
+        <text class='h2'>答案奶茶店</text>
+      </view>
+      <view class="item-info">
+        
+      </view>
+    </view>
+  </navigator>
+</view>
