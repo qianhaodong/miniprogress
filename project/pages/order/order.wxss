@@ -17,7 +17,7 @@
   height: 60rpx;
   margin-right: 16rpx;
   background-color: #eaeaea;
-  border-radius: 4rpx;
+  border-radius: 8rpx;
 }
 
 .search-icon {

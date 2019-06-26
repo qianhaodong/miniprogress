@@ -3,8 +3,9 @@
   <view class="main-hd">
     <image class="main-hd-bg" src="/image/top-bg.jpg"></image>
     <view class="userinfo">
-      <image class="userinfo-avatar" src="/image/user-avatar.png"></image>
-      <text class="userinfo-nickname">我是好孩子</text>
+      <!-- <image class="userinfo-avatar" src="/image/user-avatar.png"></image> -->
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
   <view class="main-bd">
