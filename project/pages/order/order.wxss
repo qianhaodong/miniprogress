@@ -1,0 +1,81 @@
+.order-hd {
+  padding: 20rpx 25rpx 28rpx;
+  background-color: #f5f5f5;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  margin-right: 16rpx;
+  background-color: #eaeaea;
+  border-radius: 4rpx;
+}
+
+.search-icon {
+  margin: 0 10rpx 0 6rpx;
+}
+
+.search-tips {
+  display: flex;
+  margin-top: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-cost {
+  color: #999;
+}
+
+.order-bd {
+  padding: 0 25rpx;
+}
+
+.order-item {
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 22rpx;
+  height: 154rpx;
+}
+
+.user-logo {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+}
+
+.order-info {
+  flex: 1;
+  display: flex;
+  margin-left: 24rpx;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+
+.order-text {
+  flex: 1;
+}
+
+.order-text text {
+  display: block;
+  font-size: 20rpx;
+  color: #999;
+  margin-bottom: 8rpx;
+}
+
+.order-text  text:nth-of-type(1) {
+  color: #333;
+  font-size: 26rpx;
+}
+
+.order-cost {
+  font-size: 32rpx;
+  font-weight: bold;
+}
