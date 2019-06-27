@@ -1,0 +1,36 @@
+page {
+  background-color: #b3d4db;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  margin-top: 160rpx;
+}
+
+.avatar-name {
+  font-size: 32rpx;
+  margin: 100rpx auto 240rpx;
+}
+
+.moto-box {
+  /* width: 200rpx; */
+  padding: 0 10rpx;
+  height: 80rpx;
+  border: 1rpx solid #405f80;
+  border-radius: 12rpx;
+  text-align: center;
+}
+
+.moto {
+  letter-spacing: 2rpx;
+  font-size: 24rpx;
+  line-height: 80rpx;
+}
