@@ -16,12 +16,13 @@
   align-items: center;
   height: 60rpx;
   margin-right: 16rpx;
+  padding: 0 20rpx;
   background-color: #eaeaea;
   border-radius: 8rpx;
 }
 
 .search-icon {
-  margin: 0 10rpx 0 6rpx;
+  margin-right: 10rpx;
 }
 
 .search-tips {
@@ -31,12 +32,32 @@
   justify-content: space-between;
 }
 
+.date {
+  position: relative;
+}
+
+.date::after {
+  content: '';
+  display: inline-block;
+  height: 8rpx;
+  width: 8rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #333;
+  border-style: solid;
+  transform: rotate(135deg);
+  position: absolute;
+  top: 50%;
+  right: -16rpx;
+  margin-top: -6rpx;
+}
+
 .all-cost {
   color: #999;
 }
 
 .order-bd {
-  padding: 0 25rpx;
+  padding: 0 25rpx 20rpx;
+  color: #333;
 }
 
 .order-item {

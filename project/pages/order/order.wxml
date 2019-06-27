@@ -8,7 +8,7 @@
       <text>搜索</text>
     </view>
     <view class='search-tips'>
-      <picker mode='date' start='2017-9' end='2019-8' value='2019-5'>2019-5</picker>
+      <picker bindchange='bindDateChange' class='date' mode='date' start='2017-9' end='2019-8' value='{{date}}' fields='month'>{{date}}</picker>
       <text class='all-cost'>支出￥306.00</text>
     </view>
   </view>

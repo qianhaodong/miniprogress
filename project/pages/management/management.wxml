@@ -1,12 +1,10 @@
-<view class="coupon">
+<view class="management">
   <navigator>
     <view class="coupon-item">
       <view class="item-hd">
         <view class="item-title">
           <text class="h2">答案奶茶店</text>
-          <image class="user-icon" src="/image/user-icon.png"></image>
         </view>
-        <view class="btn-use">使用</view>
       </view>
       <view class="item-info">
         <view>
@@ -14,10 +12,7 @@
         </view>
         <view class="item-detail">
           <text>元旦大酬宾</text>
-          <text>总张数：24张</text>
-          <text>已使用：6张</text>
-          <text>已分享：6张</text>
-          <text>剩余：12张</text>
+          <text>张数：24张</text>
           <text>积分返利：每张返利XXX个积分</text>
           <text>使用限制：仅限某某的的某某的的某某的的使用</text>
         </view>
@@ -29,7 +24,6 @@
       </view>
       <view class="item-footer">
         <text class="valid-date">有效期：2018-10-21至2019-01-02</text>
-        <text class="share">分享>></text>
       </view>
     </view>
   </navigator>
@@ -37,23 +31,17 @@
     <view class="coupon-item">
       <view class="item-hd">
         <view class="item-title">
-          <text class="h2">点点点点点</text>
-          <image class="user-icon" src="/image/user-icon.png"></image>
+          <text class="h2">重庆麻辣烫</text>
         </view>
-        <view class="btn-use">使用</view>
       </view>
       <view class="item-info">
         <view>
-          <text class="item-money">￥1500</text>
+          <text class="item-money">￥2400</text>
         </view>
         <view class="item-detail">
-          <text>元旦大酬宾</text>
-          <text>总张数：24张</text>
-          <text>已使用：6张</text>
-          <text>已分享：6张</text>
-          <text>剩余：12张</text>
+          <text>端午大酬宾</text>
+          <text>张数：24张</text>
           <text>积分返利：每张返利XXX个积分</text>
-          <text>使用限制：仅限某某的的某某的的某某的的使用</text>
         </view>
       </view>
       <view class="decorate">
@@ -63,29 +51,23 @@
       </view>
       <view class="item-footer">
         <text class="valid-date">有效期：2018-10-21至2019-01-02</text>
-        <text class="share">分享>></text>
       </view>
     </view>
   </navigator>
   <navigator>
-    <view class="coupon-item used">
+    <view class="coupon-item">
       <view class="item-hd">
         <view class="item-title">
-          <text class="h2">嗨饭脆皮鸡</text>
-          <image class="user-icon" src="/image/user-icon.png"></image>
+          <text class="h2">襄阳牛肉面</text>
         </view>
-        <view class="btn-use">使用</view>
       </view>
       <view class="item-info">
         <view>
-          <text class="item-money">￥1500</text>
+          <text class="item-money">￥1200</text>
         </view>
         <view class="item-detail">
-          <text>元旦大酬宾</text>
-          <text>总张数：24张</text>
-          <text>已使用：6张</text>
-          <text>已分享：6张</text>
-          <text>剩余：12张</text>
+          <text>51大酬宾</text>
+          <text>张数：12张</text>
           <text>积分返利：每张返利XXX个积分</text>
           <text>使用限制：仅限某某的的某某的的某某的的使用</text>
         </view>
@@ -97,8 +79,16 @@
       </view>
       <view class="item-footer">
         <text class="valid-date">有效期：2018-10-21至2019-01-02</text>
-        <text class="share">分享>></text>
       </view>
     </view>
   </navigator>
+  <view class="payment">
+    <view class="cost">
+      合计:<text class="money">￥20</text>
+    </view>
+    <button type="default" size="mini" class="btn-pay">支付</button>
+  </view>
+  <view class="payment2">
+    <button type='primary' class='btn-pay'>￥20</button>
+  </view>
 </view>

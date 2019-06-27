@@ -1,11 +1,11 @@
-// pages/order/order.js
+// pages/management/management.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    date: '2019-5'
+    
   },
 
   /**
@@ -13,12 +13,6 @@ Page({
    */
   onLoad: function (options) {
 
-  },
-
-  bindDateChange: function(e) {
-    this.setData({
-      date: e.detail.value
-    })
   },
 
   /**
