@@ -1,0 +1,20 @@
+<import src="posts-template/posts-template.wxml" />
+
+<view class="posts">
+  <swiper class="swiper-container" indicator-dots="true" indicator-color="#fff" indicator-active-color="#66ffff" autoplay="true" interval="3000" circular="true">
+    <swiper-item>
+      <image src="/image/post/swiper1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/post/swiper2.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/post/swiper3.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <block wx:for="{{local_database}}" wx:for-item="item" wx:for-index="index" wx:key="item.postId">
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}" />
+    </view>
+  </block>
+</view>

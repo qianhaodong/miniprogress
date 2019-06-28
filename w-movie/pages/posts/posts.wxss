@@ -1,0 +1,11 @@
+@import "posts-template/posts-template.wxss";
+
+.swiper-container {
+  width: 100%;
+  height: 460rpx;
+}
+
+.swiper-container image {
+  width: 100%;
+  height: 100%;
+}

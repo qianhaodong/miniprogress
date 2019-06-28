@@ -21,7 +21,6 @@ page {
 }
 
 .moto-box {
-  /* width: 200rpx; */
   padding: 0 10rpx;
   height: 80rpx;
   border: 1rpx solid #405f80;
