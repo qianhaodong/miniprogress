@@ -1,15 +1,16 @@
 <import src="posts-template/posts-template.wxml" />
 
 <view class="posts">
-  <swiper class="swiper-container" indicator-dots="true" indicator-color="#fff" indicator-active-color="#66ffff" autoplay="true" interval="3000" circular="true">
+  <!-- 点击轮播图片，通过冒泡到 swiper 组件上触发 catchtap 事件 -->
+  <swiper catchtap="onSwiperTap" class="swiper-container" indicator-dots="true" indicator-color="#fff" indicator-active-color="#66ffff" autoplay="true" interval="3000" circular="true">
     <swiper-item>
-      <image src="/image/post/swiper1.jpg"></image>
+      <image src="/image/post/swiper1.jpg" data-postId="3"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/image/post/swiper2.png"></image>
+      <image src="/image/post/swiper2.png" data-postId="4"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/image/post/swiper3.jpg"></image>
+      <image src="/image/post/swiper3.jpg" data-postId="2"></image>
     </swiper-item>
   </swiper>
   <block wx:for="{{local_database}}" wx:for-item="item" wx:for-index="index" wx:key="item.postId">

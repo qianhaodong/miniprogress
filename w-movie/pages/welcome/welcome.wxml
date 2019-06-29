@@ -1,7 +1,7 @@
 <view class="welcome">
   <image class="avatar-img" src="/image/avatar.jpg"></image>
   <text class="avatar-name">Hello，九月</text>
-  <view class="moto-box" bindtap="start">
+  <view class="moto-box" bindtap="onStart">
     <text class="moto">开启小程序之旅</text>
   </view>
 </view>

@@ -14,8 +14,9 @@ Page({
 
   },
 
-  start: function() {
-    wx.redirectTo({
+  onStart: function() {
+    console.log(1)
+    wx.switchTab({
       url: '/pages/posts/posts'
     })
   }
