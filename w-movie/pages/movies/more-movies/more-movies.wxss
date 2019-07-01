@@ -1,0 +1,8 @@
+@import "../../template/movie-template/movie-template.wxss";
+
+.more-movie-container {
+  margin-top: 32rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

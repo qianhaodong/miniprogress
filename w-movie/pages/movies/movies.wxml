@@ -1,2 +1,7 @@
-<!--pages/movies/movies.wxml-->
-<text>pages/movies/movies.wxml</text>
+<import src="../template/movie-list-template/movie-list-template.wxml" />
+
+<view>
+  <template is="movie-list-template" data="{{...hotMovie_data}}" />
+  <template is="movie-list-template" data="{{...movies_data}}" />
+  <template is="movie-list-template" data="{{...top250_data}}" />
+</view>

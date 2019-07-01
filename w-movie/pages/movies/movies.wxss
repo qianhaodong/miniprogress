@@ -1,1 +1,6 @@
-/* pages/movies/movies.wxss */
+@import "../template/movie-list-template/movie-list-template.wxss";
+
+page {
+  background-color: #f2f2f2;
+  margin-top: 20rpx;
+}

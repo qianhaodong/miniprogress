@@ -87,8 +87,7 @@ Page({
     
     // 更新文章是否收藏的缓存值
     wx.setStorageSync('posts_collected', postsCollected)
-    // this 保存到 that 中
-    that.setData({
+    this.setData({
       collected: postCollected
     })
 

@@ -4,6 +4,7 @@
     "pages/posts/posts",
     "pages/posts/posts-detail/posts-detail",
     "pages/movies/movies",
+    "pages/movies/more-movies/more-movies",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -14,7 +15,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
   },
   "tabBar": {
     "color": "#333",

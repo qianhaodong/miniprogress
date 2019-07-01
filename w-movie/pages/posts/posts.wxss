@@ -1,5 +1,9 @@
 @import "posts-template/posts-template.wxss";
 
+.posts {
+  padding: 0 22rpx;
+}
+
 .swiper-container {
   width: 100%;
   height: 460rpx;
