@@ -4,19 +4,19 @@
     "pages/posts/posts",
     "pages/posts/posts-detail/posts-detail",
     "pages/movies/movies",
+    "pages/movies/movie-detail/movie-detail",
     "pages/movies/more-movies/more-movies",
     "pages/index/index",
     "pages/logs/logs"
   ],
-  "requireBackgroundModes": [
+  "requiredBackgroundModes": [
     "audio"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "onReachBottomDistance": 50
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#333",

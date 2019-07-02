@@ -1,6 +1,40 @@
 @import "../template/movie-list-template/movie-list-template.wxss";
+@import "../template/movie-template/movie-template.wxss";
 
 page {
+  /* background-color: #f2f2f2; */
+}
+
+.search {
+  /* width: 100%; */
+  padding: 0 20rpx;
+  height: 80rpx;
   background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  flex: 1;
+  height: 100%;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.search image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.placeholder {
+  /* font-size: 14rpx; */
+  color: #d1d1d1;
+  margin-left: 20rpx;
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 20rpx;
 }

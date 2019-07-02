@@ -43,7 +43,7 @@ Page({
       wx.setStorageSync('posts_collected', postsCollected)
     }
 
-    this.setData({
+    this.setData({ // 获取音乐实例并保存到 data 中
         backgroundAudioManager: wx.getBackgroundAudioManager()
     })
 
@@ -67,7 +67,18 @@ Page({
       app.globalData.g_isPlayingMusic = true
       app.globalData.g_currentMusicPostId = that.data.currentPostId
     })
+
+    // 监听音乐暂停事件
     this.data.backgroundAudioManager.onPause(function () {
+      that.setData({
+        isPlayingMusic: false
+      })
+      app.globalData.g_isPlayingMusic = false
+      app.globalData.g_currentMusicPostId = null
+    })
+
+    // 监听音乐自然播放结束事件
+    this.data.backgroundAudioManager.onEnded(function() {
       that.setData({
         isPlayingMusic: false
       })

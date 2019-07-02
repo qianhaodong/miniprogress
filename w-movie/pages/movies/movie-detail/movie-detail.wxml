@@ -1,0 +1,42 @@
+<import src="../../template/stars-template/stars-template.wxml" />
+
+<view class="movie-detail">
+  <image class="hd-img" src="{{movie_detail.poster}}" mode="aspectFill"></image>
+  <view class="hd-img-cover">
+    <text class="main-title">{{movie_detail.title}}</text>
+    <text class="sub-title">{{movie_detail.country + "-" + movie_detail.year}}</text>
+    <view class="like">
+      <text class="highlight-font">6942</text>
+      <text class="plain-font">人喜欢</text>
+      <text class="highlight-font">14886</text>
+      <text class="plain-font">人评论</text>
+    </view>
+  </view>
+  <image class="movie-img" src="{{movie_detail.poster}}"></image>
+  <view class="summary">
+    <view class="original-title">
+      <text>{{movie_detail.title}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分：</text>
+      <template is="stars-template" />
+    </view>
+    <view class="flex-row">
+      <text class="mark">导演：</text>
+      <text>{{movie_detail.directors}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">演员：</text>
+      <text>{{movie_detail.actors}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">类型：</text>
+      <text>{{movie_detail.genres}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text>剧情简介</text>
+    <text class="summary-content">{{movie_detail.summary}}</text>
+  </view>
+</view>

@@ -1,7 +1,19 @@
 <import src="../template/movie-list-template/movie-list-template.wxml" />
+<import src="../template/movie-template/movie-template.wxml" />
 
-<view>
+<view class="search">
+  <icon type="search" size="13" color="#405f80"></icon>
+  <input type="text" placeholder="请输入" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur" value="{{query}}"></input>
+  <image wx:if="{{!showFlag}}" src="/image/icon/xx.png" bindtap="onCancelTap"></image>
+</view>
+<view wx:if="{{showFlag}}">
   <template is="movie-list-template" data="{{...hotMovie_data}}" />
   <template is="movie-list-template" data="{{...movies_data}}" />
   <template is="movie-list-template" data="{{...top250_data}}" />
+</view>
+<view wx:else class="search-result">
+  <block wx:for="{{result_data}}" wx:key="{{item.movieid}}">
+    <template is="movie-template" data="{{...item}}" />
+  </block>
+  <!-- search-result -->
 </view>
