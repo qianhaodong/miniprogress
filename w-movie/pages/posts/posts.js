@@ -1,3 +1,4 @@
+// require 只支持相对路径，不支持绝对路径
 var data = require('../../data/posts-data.js')
 
 Page({
