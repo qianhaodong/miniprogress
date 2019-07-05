@@ -14,12 +14,12 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const http = (url, callback) => {
+const http = (url, callback, key) => {
   wx.request({
     url: url,
     success(res) {
       if (res.statusCode === 200) {
-        callback(res.data)
+        callback(res.data, key)
       } else {
         console.log(res.errMsg)
       }

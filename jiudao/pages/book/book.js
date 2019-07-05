@@ -1,66 +1,50 @@
-// pages/book/book.js
+const util = require('../../utils/util.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    book_list: [],
+    hot_list: {},
+    inputChange: false,
+    searchResultShow: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    const url = 'http://bl.7yue.pro/v1/book/hot_list?appkey=RdshydjBvcYZhMZC'
+    
+    util.http(url, this.setRequestHandler, 'book_list')
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  onBindFocus(e) {
+    const url = 'http://bl.7yue.pro/v1/book/hot_keyword?appkey=RdshydjBvcYZhMZC'
 
+    util.http(url, this.setRequestHandler, 'hot_list')
+    this.setData({
+      inputChange: true,
+      searchResultShow: true
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  setRequestHandler(result, key) {
+    if (result) {
+      this.setData({
+        [key]: result
+      })
+    } else {
+      console.log('Request Error')
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onBindBlur(e) {
+    this.setData({
+      inputChange: false,
+      searchResultShow: false
+    })
   }
 })

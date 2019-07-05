@@ -33,8 +33,8 @@
     </view>
   </view>
   <view class="bottom">
-    <image class="prev" src="/images/icon/prev-icon.png" catchtap="onPrevTap"></image>
+    <image class="{{!isPrevEnd ? 'prev' : 'prev-end'}}" src="/images/icon/prev-icon.png" catchtap="onPrevTap"></image>
     <text class="title">{{result.title}}</text>
-    <image class="next" src="/images/icon/next-icon.png" catchtap="onNextTap"></image>
+    <image class="{{!isNextEnd ? 'next' : 'next-end'}}" src="/images/icon/next-icon.png" catchtap="onNextTap"></image>
   </view>
 </view>

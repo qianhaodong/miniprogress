@@ -1,0 +1,15 @@
+<view class="search-record">
+  <view class="search-hd">
+    <view class="line-icon"></view>
+    <text class="title">
+      <slot></slot>
+    </text>
+  </view>
+  <view class="search-key-list">
+    <block wx:for="{{hotList}}" wx:key="{{item}}">
+      <view class="search-key">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>

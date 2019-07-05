@@ -1,0 +1,11 @@
+<view class="book-item">
+  <image class="book-img" src="{{bookItem.image}}"></image>
+  <view class="book-info">
+    <text class="book-name">{{bookItem.title}}</text>
+    <text class="book-author">{{bookItem.author}}</text>
+    <view class="book-user-info">
+      <text class="like-num">{{bookItem.fav_nums}}</text>喜欢 ·
+      <text class="comment-num">68</text>短评
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="search-result">
+  <view class="search-item">
+    <image class="item-img" src="/images/book1.jpg"></image>
+    <view class="item-info">
+      <text class="item-name">学习之道</text>
+      <text class="item-author">王某某</text>
+    </view>
+  </view>
+</view>

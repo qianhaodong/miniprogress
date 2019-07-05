@@ -1,2 +1,29 @@
-<!--pages/book/book.wxml-->
-<text>pages/book/book.wxml</text>
+<view class="book-container">
+  <view class="search-box">
+    <view class="{{inputChange ? 'search-input-m' : 'search-input'}}" wx:class="{{}}">
+      <icon class="search-icon" size='14' type="search"></icon>
+      <input class="search" placeholder="搜索图书名称" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"></input>
+    </view>
+    <view wx:if="{{inputChange}}" class="cancel">
+      <text>取消</text>
+    </view>
+  </view>
+  <view wx:if="{{searchResultShow}}" class="book-content">
+    <view class="title">
+      <image src="/images/decorate.png"></image>
+      <text>精选</text>
+    </view>
+    <view class="book-list">
+      <block wx:for="{{book_list}}" wx:key="id">
+        <book-item book-item="{{item}}"></book-item>
+      </block>
+    </view>
+  </view>
+  <view wx:else class="search-result">
+    <!-- <history-search></history-search> -->
+    <!-- <view>
+      <search-key hot-list="{{hot_list.hot}}">热门搜索</search-key>
+    </view> -->
+    <search-result></search-result>
+  </view>
+</view>

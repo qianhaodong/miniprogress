@@ -1,0 +1,35 @@
+.search-result {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx;
+  height: 140rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.item-img {
+  margin-right: 20rpx;
+  width: 60rpx;
+  height: 80rpx;
+}
+
+.item-info {
+  height: 80rpx;
+}
+
+.item-name {
+  display: block;
+  /* margin-bottom: 16rpx; */
+  font-size: 28rpx;
+  color: #010101;
+}
+
+.item-author {
+  font-size: 20rpx;
+  color: #999;
+}

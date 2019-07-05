@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "book-item": "/components/book-item/book-item",
+    "search-key": "/components/search-key/search-key",
+    "search-result": "/components/search-result/search-result"
+  }
 }
