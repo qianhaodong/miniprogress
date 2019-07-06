@@ -1,29 +1,29 @@
 <view class="book-container">
   <view class="search-box">
     <view class="{{inputChange ? 'search-input-m' : 'search-input'}}" wx:class="{{}}">
-      <icon class="search-icon" size='14' type="search"></icon>
-      <input class="search" placeholder="搜索图书名称" placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"></input>
+      <icon class="search-icon" size='14' type="search" catchtap="onSearchIconTap" data-query="{{query}}"></icon>
+      <input type="text" class="search" placeholder="{{placeholder}}" placeholder-class="placeholder" bindfocus="onBindFocus" bindinput="onBindInput" value="{{query}}" confirm-type="search" bindconfirm="onConfirmSearch"></input>
+      <icon wx:if="{{clearIconShow}}" class="clear" size="14" type="clear" catchtap="onClearTap"></icon>
     </view>
-    <view wx:if="{{inputChange}}" class="cancel">
+    <view wx:if="{{inputChange}}" class="cancel" catchtap="onCancelTap">
       <text>取消</text>
     </view>
   </view>
-  <view wx:if="{{searchResultShow}}" class="book-content">
+  <view wx:if="{{!searchResultShow}}" class="book-content">
     <view class="title">
       <image src="/images/decorate.png"></image>
       <text>精选</text>
     </view>
-    <view class="book-list">
-      <block wx:for="{{book_list}}" wx:key="id">
-        <book-item book-item="{{item}}"></book-item>
-      </block>
-    </view>
+    <book-list book-list="{{book_list}}"></book-list>
   </view>
-  <view wx:else class="search-result">
-    <!-- <history-search></history-search> -->
-    <!-- <view>
-      <search-key hot-list="{{hot_list.hot}}">热门搜索</search-key>
-    </view> -->
-    <search-result></search-result>
+  <view wx:else class="search-result-content">
+    <view wx:if="{{!search_list.books.length}}">
+      <search-key wx:if="{{history_list.length}}" catchquerySelected="onQuerySelected" hot-list="{{history_list}}">历史搜索</search-key>
+      <search-key catchquerySelected="onQuerySelected" hot-list="{{hot_list.hot}}">热门搜索</search-key>
+    </view>
+    <block wx:else>
+      <book-list book-list="{{search_list.books}}"></book-list>
+      <!-- <search-result search-list="{{search_list.books}}"></search-result> -->
+    </block>
   </view>
 </view>

@@ -1,9 +1,10 @@
+// components/book-list/book-list.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    searchList: {
+    bookList: {
       type: Array,
       value: []
     }
@@ -15,14 +16,6 @@ Component({
   data: {
 
   },
-  
-  /* lifetimes: {
-    attached() {
-      searchList.forEach(function(item, index) {
-        let 
-      })
-    }
-  }, */
 
   /**
    * 组件的方法列表

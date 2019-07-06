@@ -3,7 +3,7 @@
   margin-bottom: 60rpx;
   width: 240rpx;
   height: 360rpx;
-  border-radius: 8rpx;
+  border-radius: 6rpx;
   overflow: hidden;
   box-shadow:0 0 28rpx 8rpx #eee;
 }
@@ -40,6 +40,9 @@
 .book-author {
   font-size: 20rpx;
   color: #999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .book-user-info {

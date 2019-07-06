@@ -10,11 +10,7 @@ Page({
     result: {},
     index: 0,
     isPrevEnd: false,
-    isNextEnd: false,
-    musicShow: false,
-    isPlayingMusic: false,
-    category: 'movie',
-    currentIndex: 0
+    isNextEnd: false
   },
 
   /**
@@ -50,7 +46,7 @@ Page({
     util.http(url, this.onRequretHandler)
   },
 
-  onRequretHandler(result) {
+  /* onRequretHandler(result) {
     if (result) {
       var type = result.type
       var category = ''          // 记录类型图标
@@ -107,58 +103,35 @@ Page({
     } else {
       console.log('Callback Error')
     }
-  },
+  }, */
 
-  onMusicPlay(e) {
-    var backgroundAudioManager = wx.getBackgroundAudioManager()
-    var config = { // 歌曲详情配置
-      title: this.data.result.title.split('《')[1].split('》')[0],
-      singer: this.data.result.title.split('《')[0],
-      src: this.data.result.url,
-      coverImgUrl: this.data.result.image
-    }
-
-    if (this.data.isPlayingMusic) {
-      backgroundAudioManager.pause()
+  onRequretHandler(result) {
+    if (result) {
+      
+      // 初始化状态变量和模板数据
       this.setData({
-        isPlayingMusic: false
+        result: result,
+        index: result.index
       })
-    } else { // 初始化音乐播放
-      Object.assign(backgroundAudioManager, config)
-      this.setData({
-        isPlayingMusic: true,
-        currentIndex: this.data.result.index // 记录当前播放音乐索引
-      })
-    }
 
-    this.setMusicMonitor(backgroundAudioManager)
-  },
-
-  setMusicMonitor(backgroundAudioManager) {
-    var that = this
-
-    backgroundAudioManager.onPlay(function () { // 监听播放状态
-      if (that.data.index === that.data.currentIndex) {
-        that.setData({
-          isPlayingMusic: true
+      // 通过索引判断切换按钮状态
+      if (this.data.index === 8) {
+        this.setData({
+          isPrevEnd: true
+        })
+      } else if (this.data.index === 1) {
+        this.setData({
+          isNextEnd: true
+        })
+      } else {
+        this.setData({
+          isPrevEnd: false,
+          isNextEnd: false
         })
       }
-    })
 
-    backgroundAudioManager.onPause(function () { // 监听暂停状态
-      if (that.data.index === that.data.currentIndex) {
-        that.setData({
-          isPlayingMusic: false
-        })
-      }
-    })
-
-    backgroundAudioManager.onEnded(function () { // 监听自然播放完成状态
-      // 播放完成之后清除播放状态缓存
-      that.setData({
-        isPlayingMusic: false,
-        currentIndex: 0
-      })
-    })
-  },
+    } else {
+      console.log('Callback Error')
+    }
+  }
 })

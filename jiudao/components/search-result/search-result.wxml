@@ -1,9 +1,11 @@
 <view class="search-result">
-  <view class="search-item">
-    <image class="item-img" src="/images/book1.jpg"></image>
-    <view class="item-info">
-      <text class="item-name">学习之道</text>
-      <text class="item-author">王某某</text>
+  <block wx:for="{{searchList}}" wx:key="id">
+    <view class="search-item">
+      <image class="item-img" src="{{item.image}}"></image>
+      <view class="item-info">
+        <text class="item-name">{{item.title}}</text>
+        <text class="item-author">{{item.author[0]}}</text>
+      </view>
     </view>
-  </view>
+  </block>
 </view>

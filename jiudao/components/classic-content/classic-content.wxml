@@ -1,0 +1,13 @@
+<view class="content">
+  <view wx:if="{{musicShow}}" class="music-play">
+    <image class="music-img" src="{{result.image}}"></image>
+    <view class="btn-play" catchtap="onMusicPlay">
+      <image class="{{isPlayingMusic ? 'pause' : 'play'}}" src="{{isPlayingMusic ? '/images/icon/pause-icon.png' : '/images/icon/play-icon.png'}}"></image>
+    </view>
+  </view>
+  <image wx:else class="content-img" src="{{result.image}}"></image>
+  <image class="content-tips" src="/images/{{category}}.png"></image>
+  <view class="content-txt">
+    <text>{{result.content}}</text>
+  </view>
+</view>

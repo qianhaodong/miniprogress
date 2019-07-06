@@ -1,37 +1,6 @@
 <view class="classic-container">
-  <view class="top">
-    <view class="l-msg">
-      <view class="order">
-        <text>No.</text>
-        <text class="num">{{result.index}}</text>
-      </view>
-      <view class="line"></view>
-      <view class="date">
-        <text class="month">六月</text>
-        <text class="year">2019</text>
-      </view>
-    </view>
-    <view class="r-msg">
-      <view>
-        <image class="like" src="{{result.like_status ? '/images/icon/love-active-icon.png' : '/images/icon/love-icon.png'}}"></image>
-        <text class="like-num">{{result.fav_nums}}</text>
-      </view>
-      <image class="share" src="/images/icon/share-icon.png"></image>
-    </view>
-  </view>
-  <view class="content">
-    <view wx:if="{{musicShow}}" class="music-play">
-      <image class="music-img" src="{{result.image}}"></image>
-      <view class="btn-play" catchtap="onMusicPlay">
-        <image class="{{isPlayingMusic ? 'pause' : 'play'}}" src="{{isPlayingMusic ? '/images/icon/pause-icon.png' : '/images/icon/play-icon.png'}}"></image>
-      </view>
-    </view>
-    <image wx:else class="content-img" src="{{result.image}}"></image>
-    <image class="content-tips" src="/images/{{category}}.png"></image>
-    <view class="content-txt">
-      <text>{{result.content}}</text>
-    </view>
-  </view>
+  <classic-info result="{{result}}"></classic-info>
+  <classic-content result="{{result}}"></classic-content>
   <view class="bottom">
     <image class="{{!isPrevEnd ? 'prev' : 'prev-end'}}" src="/images/icon/prev-icon.png" catchtap="onPrevTap"></image>
     <text class="title">{{result.title}}</text>

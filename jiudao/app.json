@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/book/book",
     "pages/classic/classic",
+    "pages/book/book",
     "pages/favorite/favorite",
+    "components/classic-info/classic-info",
+    "components/classic-content/classic-content",
+    "components/book-list/book-list",
     "components/book-item/book-item",
     "components/search-key/search-key",
     "components/search-result/search-result",

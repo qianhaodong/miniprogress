@@ -7,7 +7,7 @@
   </view>
   <view class="search-key-list">
     <block wx:for="{{hotList}}" wx:key="{{item}}">
-      <view class="search-key">
+      <view class="search-key" catchtap="onSelectedTap" data-value="{{item}}">
         <text>{{item}}</text>
       </view>
     </block>

@@ -1,0 +1,20 @@
+<view class="classic-info">
+    <view class="l-msg">
+      <view class="order">
+        <text>No.</text>
+        <text class="num">{{result.index}}</text>
+      </view>
+      <view class="line"></view>
+      <view class="date">
+        <text class="month">六月</text>
+        <text class="year">2019</text>
+      </view>
+    </view>
+    <view class="r-msg">
+      <view>
+        <image class="like" src="{{result.like_status ? '/images/icon/love-active-icon.png' : '/images/icon/love-icon.png'}}"></image>
+        <text class="like-num">{{result.fav_nums}}</text>
+      </view>
+      <image class="share" src="/images/icon/share-icon.png"></image>
+    </view>
+  </view>

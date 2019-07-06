@@ -1,21 +1,24 @@
-page {
-  /* background-color: #f9f9f9; */
-}
-
 .book-container {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #f3f3f3;
+  padding-top: 110rpx;
 }
 
 .search-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
   padding: 0 30rpx;
+  width: 100%;
   height: 108rpx;
+  box-sizing: border-box;
   background-color: #fff;
-  transition: all 0.5s;
+  border-top: 1px solid #f3f3f3;
+  transition: all 0.2s;
+  z-index: 99;
 }
 
 .search-input {
@@ -27,7 +30,7 @@ page {
   padding: 0 24rpx;
   border-radius: 34rpx;
   background-color: #f7f7f7;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 .search-input-m {
@@ -46,6 +49,7 @@ page {
   font-size: 28rpx;
   color: #333;
   margin-left: 10rpx;
+  flex: 1;
 }
 
 .placeholder {
@@ -63,7 +67,7 @@ page {
   text-align: center;
 }
 
-.book {
+.book-content {
   background-color: #f9f9f9;
 }
 
@@ -86,6 +90,8 @@ page {
 .title text {
   font-size: 34rpx;
   color: #000;
+  position:relative;
+  z-index:1;
 }
 
 .book-list {
@@ -95,7 +101,6 @@ page {
   padding: 30rpx 90rpx 0;
 }
 
-.search-result {
+.search-result-content {
   border-top: 1px solid #f3f3f3;
-  padding: 30rpx;
 }

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "classic-info": "/components/classic-info/classic-info",
+    "classic-content": "/components/classic-content/classic-content"
+  }
 }
