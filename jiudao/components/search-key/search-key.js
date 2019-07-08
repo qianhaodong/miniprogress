@@ -31,8 +31,9 @@ Component({
     onSelectedTap(e) {
       // 获取搜索关键字
       let query = e.currentTarget.dataset.value
-
-      // 派发  事件
+      
+      // app.globalData.query = query
+      // 派发事件
       this.triggerEvent('querySelected', {query: query})
     }
   }

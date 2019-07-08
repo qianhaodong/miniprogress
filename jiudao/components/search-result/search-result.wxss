@@ -1,8 +1,4 @@
-/* .scroll-view {
-  height: 1000rpx;
-} */
-
-.search-result {
+/* .search-result {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -43,4 +39,4 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
+} */

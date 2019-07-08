@@ -1,0 +1,10 @@
+<view class="search-box">
+  <view class="{{inputChange ? 'search-input-m' : 'search-input'}}" wx:class="{{}}">
+    <icon class="search-icon" size='14' type="search" catchtap="onSearchIconTap" data-query="{{query}}"></icon>
+    <input type="text" class="search" placeholder="{{placeholder}}" placeholder-class="placeholder" bindfocus="onBindFocus" bindinput="onBindInput" value="{{query}}" confirm-type="search" bindconfirm="onConfirmSearch"></input>
+    <icon wx:if="{{clearIconShow}}" class="clear" size="14" type="clear" catchtap="onClearTap"></icon>
+  </view>
+  <view wx:if="{{inputChange}}" class="cancel" catchtap="onCancelTap">
+    <text>取消</text>
+  </view>
+</view>

@@ -1,6 +1,6 @@
 <view class="classic-container">
   <classic-info result="{{result}}"></classic-info>
-  <classic-content result="{{result}}"></classic-content>
+  <classic-content result-list="{{result}}" index="{{index}}"></classic-content>
   <view class="bottom">
     <image class="{{!isPrevEnd ? 'prev' : 'prev-end'}}" src="/images/icon/prev-icon.png" catchtap="onPrevTap"></image>
     <text class="title">{{result.title}}</text>

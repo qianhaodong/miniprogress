@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    g_isPlayingMusic: false,
+    query: '',
     appkey: 'RdshydjBvcYZhMZC' // appkey -- 旧岛数据API请求key
   }
 })

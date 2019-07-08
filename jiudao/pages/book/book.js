@@ -6,14 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    placeholder: '搜索图书名称',
-    book_list: [],
-    history_list: [],
-    hot_list: {},
-    search_list: {},
-    inputChange: false,
     searchResultShow: false,
     clearIconShow: false,
+    book_list: [],
+    // history_list: [],
+    // hot_list: {},
+    search_list: {},
     query: ''
   },
 
@@ -22,7 +20,7 @@ Page({
    */
   onLoad(options) {
     const url = 'http://bl.7yue.pro/v1/book/hot_list?appkey=RdshydjBvcYZhMZC'
-    
+
     wx.showLoading({
       title: '正在加载'
     })
@@ -30,62 +28,45 @@ Page({
     util.http(url, this._setRequestHandler, 'book_list')
 
     // 初始化搜索历史
-    this.setData({
+    /* this.setData({
       history_list: wx.getStorageSync('history_list') ? wx.getStorageSync('history_list') : []
-    })
+    }) */
   },
 
-  onBindFocus(e) { // 获取焦点事件处理
-    const url = 'http://bl.7yue.pro/v1/book/hot_keyword?appkey=RdshydjBvcYZhMZC'
-    
+  onFocus(e) {
+    /* const url = 'http://bl.7yue.pro/v1/book/hot_keyword?appkey=RdshydjBvcYZhMZC'
+
     util.http(url, this._setRequestHandler, 'hot_list')
     this.setData({
-      inputChange: true,
-      searchResultShow: true,
-      placeholder: '搜索图书名称'
+      searchResultShow: e.detail.searchResultShow
+    }) */
+    this.setData({
+      searchResultShow: e.detail.searchResultShow
     })
   },
 
-  onBindInput(e) { // 搜索框搜索关键字改变时触发
-    let query = e.detail.value
-
-    if (query) {
-      this.setData({
-        query: query,
-        clearIconShow: true
-      })
-    } else {
-      this.setData({
-        clearIconShow: false
-      })
-    }
+  onQuerySelected(e) { // 设置 search-result 组件传递来的 query 值
+    this.setData({
+      query: e.detail.query,
+      clearIconShow: e.detail.clearIconShow
+    })
   },
 
-  onConfirmSearch(e) { // 手机键盘点击搜索触发
-    let query = e.detail.value
-    
-    if (query) {
-      this._getSearchResult(query)
-    } else {
-      this.setData({
-        placeholder: '请输入搜索内容'
-      })
-    }
+  onConfirmSearch(e) {
+    this.setData({
+      query: e.detail.query
+    })
   },
 
-  onSearchIconTap(e) { // 搜索图标点击搜索处理
-    let query = e.currentTarget.dataset.query
-
-    if (query) {
-      this._getSearchResult(query)
-    } else {
-      this.setData({
-        placeholder: '请输入搜索内容'
-      })
-    }
+  onCancel(e) {
+    this.setData({
+      searchResultShow: e.detail.searchResultShow,
+      search_list: {},
+      query: ''
+    })
   },
 
-  onQuerySelected(e) { // 组件事件处理器
+  /* onQuerySelected(e) { // 组件事件处理器
     let query = e.detail.query
 
     // 设置搜索框搜索关键字
@@ -95,24 +76,7 @@ Page({
     })
 
     this._getSearchResult(query)
-  },
-
-  onClearTap() { // 清空搜索框事件
-    this.setData({
-      query: '',
-      clearIconShow: false,
-      search_list: {}
-    })
-  },
-
-  onCancelTap() { // 取消按钮事件
-    this.setData({
-      inputChange: false,
-      searchResultShow: false,
-      query: '',
-      search_list: {}
-    })
-  },
+  }, */
 
   _getSearchResult(query) {
     let url = `http://bl.7yue.pro/v1/book/search?appkey=RdshydjBvcYZhMZC&summary=1&q=${query}`
@@ -130,7 +94,7 @@ Page({
         })
         history_list.splice(index, 1)
       }
-      
+
       // unshift() 方法用于向数组头部添加内容，会改变原数组，返回新数组的长度
       history_list.unshift(query)
 
@@ -172,5 +136,5 @@ Page({
     } else {
       console.log('Request Error')
     }
-  },
+  }
 })

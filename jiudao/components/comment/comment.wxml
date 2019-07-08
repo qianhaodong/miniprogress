@@ -1,0 +1,13 @@
+<view class="comment">
+  <view class="comment-input">
+    <image class="write-icon" src="/images/icon/write-icon.png"></image>
+    <input class="write-input" placeholder="留下你的短评~" placeholder-class="placeholder"></input>
+  </view>
+  <view class="r-msg">
+    <view>
+      <image class="like" src="/images/icon/love-icon.png"></image>
+      <text class="like-num">1648</text>
+    </view>
+    <image class="share" src="/images/icon/share-icon.png"></image>
+  </view>
+</view>

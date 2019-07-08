@@ -1,4 +1,4 @@
-<view class="book-item">
+<view class="book-item" catchtap="onBookTap" data-bookId="{{bookItem.id}}">
   <image class="book-img" src="{{bookItem.image}}"></image>
   <view class="book-info">
     <text class="book-name">{{bookItem.title}}</text>

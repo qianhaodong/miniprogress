@@ -1,14 +1,6 @@
 <view class="book-container">
-  <view class="search-box">
-    <view class="{{inputChange ? 'search-input-m' : 'search-input'}}" wx:class="{{}}">
-      <icon class="search-icon" size='14' type="search" catchtap="onSearchIconTap" data-query="{{query}}"></icon>
-      <input type="text" class="search" placeholder="{{placeholder}}" placeholder-class="placeholder" bindfocus="onBindFocus" bindinput="onBindInput" value="{{query}}" confirm-type="search" bindconfirm="onConfirmSearch"></input>
-      <icon wx:if="{{clearIconShow}}" class="clear" size="14" type="clear" catchtap="onClearTap"></icon>
-    </view>
-    <view wx:if="{{inputChange}}" class="cancel" catchtap="onCancelTap">
-      <text>取消</text>
-    </view>
-  </view>
+  <search-box query="{{query}}" clearIconShow="{{clearIconShow}}" bindonFocus="onFocus" bindonConfirmSearch="onConfirmSearch" bindonCancel="onCancel">
+  </search-box>
   <view wx:if="{{!searchResultShow}}" class="book-content">
     <view class="title">
       <image src="/images/decorate.png"></image>
@@ -17,13 +9,14 @@
     <book-list book-list="{{book_list}}"></book-list>
   </view>
   <view wx:else class="search-result-content">
-    <view wx:if="{{!search_list.books.length}}">
+    <search-result bindquerySelected="onQuerySelected" search-list="{{search_list}}" query="{{query}}"></search-result>
+
+    <!-- <view wx:if="{{!search_list.books.length}}">
       <search-key wx:if="{{history_list.length}}" catchquerySelected="onQuerySelected" hot-list="{{history_list}}">历史搜索</search-key>
       <search-key catchquerySelected="onQuerySelected" hot-list="{{hot_list.hot}}">热门搜索</search-key>
     </view>
     <block wx:else>
       <book-list book-list="{{search_list.books}}"></book-list>
-      <!-- <search-result search-list="{{search_list.books}}"></search-result> -->
-    </block>
+    </block> -->
   </view>
 </view>

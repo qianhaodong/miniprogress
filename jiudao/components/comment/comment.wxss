@@ -1,0 +1,61 @@
+.comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  height: 86rpx;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.comment-input {
+  display: flex;
+  align-items: center;
+  width: 400rpx;
+  height: 54rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  border: 1px solid #000;
+  border-radius: 27rpx;
+}
+
+.write-icon {
+  margin-right: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.write-input {
+  flex: 1;
+}
+
+.placeholder {
+  font-size: 24rpx;
+  color: #010101;
+}
+
+.r-msg {
+  display: flex;
+  align-items: center;
+}
+
+.like {
+  width: 32rpx;
+  height: 28rpx;
+}
+
+.like-num {
+  position: relative;
+  top: -18rpx;
+  left: 4rpx;
+  font-size: 18rpx;
+  color: #bbb;
+}
+
+.share {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 44rpx;
+}

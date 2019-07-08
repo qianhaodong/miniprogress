@@ -14,6 +14,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+// 数据请求处理
 const http = (url, callback, key) => {
   wx.request({
     url: url,

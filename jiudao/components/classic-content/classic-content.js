@@ -3,9 +3,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    result: {
+    resultList: {
       type: Object,
       value: {}
+    },
+    index: {
+      type: Number,
+      value: 0
     }
   },
 
@@ -13,32 +17,27 @@ Component({
    * 组件的初始数据
    */
   data: {
+    result: {},
     musicShow: false,
     isPlayingMusic: false,
     category: 'movie',
     currentIndex: 0
   },
-  
-  lifetimes: {
-    created() {
-      console.log(this.properties.result)
-    },
 
-    attached() {
-      this.showData()
-      var type = this.data.result.type  // 获取结果类型
-      var category = ''                 // 记录类型图标
-      var musicShow = false             // 记录音乐播放器显示状态
-      var isPlayingMusic = false        // 记录音乐播放状态
+  observers: {
+    resultList(result) {
+      if (!Object.keys(result).length) return
 
-      console.log(this.properties.result)
+      let type = result.type            // 获取结果类型
+      let category = ''                 // 记录类型图标
+      let musicShow = false             // 记录音乐播放器显示状态
+      let isPlayingMusic = false        // 记录音乐播放状态
 
       // 判断类型，显示对应icon和显示音乐播放器
       switch (type) {
         case 100:
           category = 'movie'
           musicShow = false
-          // console.log('movie')
           break
         case 200:
           category = 'music'
@@ -59,24 +58,20 @@ Component({
 
       // 初始化状态变量和模板数据
       this.setData({
+        result: result,
         category: category,
         musicShow: musicShow
       })
     }
-
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    showData() {
-      console.log(this.data)
-    },
-    
     onMusicPlay(e) {
-      var backgroundAudioManager = wx.getBackgroundAudioManager()
-      var config = { // 歌曲详情配置
+      let backgroundAudioManager = wx.getBackgroundAudioManager()
+      let config = { // 歌曲详情配置
         title: this.data.result.title.split('《')[1].split('》')[0],
         singer: this.data.result.title.split('《')[0],
         src: this.data.result.url,
@@ -100,7 +95,7 @@ Component({
     },
 
     setMusicMonitor(backgroundAudioManager) {
-      var that = this
+      let that = this
 
       backgroundAudioManager.onPlay(function () { // 监听播放状态
         if (that.data.index === that.data.currentIndex) {

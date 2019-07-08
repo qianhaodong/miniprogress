@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "book-list": "/components/book-list/book-list",
+    "search-key": "/components/search-key/search-key"
+  }
 }

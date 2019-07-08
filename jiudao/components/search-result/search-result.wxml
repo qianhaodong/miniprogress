@@ -1,11 +1,9 @@
 <view class="search-result">
-  <block wx:for="{{searchList}}" wx:key="id">
-    <view class="search-item">
-      <image class="item-img" src="{{item.image}}"></image>
-      <view class="item-info">
-        <text class="item-name">{{item.title}}</text>
-        <text class="item-author">{{item.author[0]}}</text>
-      </view>
-    </view>
+  <view wx:if="{{!searchList.length}}">
+    <search-key wx:if="{{history_list.length}}" catchquerySelected="onQuerySelected" hot-list="{{history_list}}">历史搜索</search-key>
+    <search-key catchquerySelected="onQuerySelected" hot-list="{{hot_list}}">热门搜索</search-key>
+  </view>
+  <block wx:else>
+    <book-list book-list="{{searchList}}"></book-list>
   </block>
 </view>
