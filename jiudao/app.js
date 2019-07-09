@@ -32,6 +32,9 @@ App({
         }
       }
     })
+
+    // 获取宿主环境信息
+    // console.dir(wx.getSystemInfoSync())
   },
   globalData: {
     userInfo: null,

@@ -1,44 +1,50 @@
 <view class="book-detail-container">
-  <search-box></search-box>
-  <view class="book-content">
-    <view class="book-cover">
-      <image class="book-img" src="{{book_detail.image}}"></image>
-      <text class="book-name">{{book_detail.title}}</text>
-      <text class="book-author">{{book_detail.author}}</text>
-    </view>
-    <view class="book-comment">
-      <text class="title">短评</text>
-      <view class="comment-content">
-        <block wx:for="{{comment_list}}" wx:key="item">
-          <text>{{item}}</text>
-        </block>
+  <search-box query="{{query}}" clearIconShow="{{clearIconShow}}" bindonFocus="onFocus" bindonConfirmSearch="onConfirmSearch" bindonCancel="onCancel">
+  </search-box>
+
+  <block wx:if="{{!searchResultShow}}">
+    <view class="book-content">
+      <view class="book-cover">
+        <image class="book-img" src="{{book_detail.image}}"></image>
+        <text class="book-name">{{book_detail.title}}</text>
+        <text class="book-author">{{book_detail.author}}</text>
       </view>
-    </view>
-    <view class="book-summary">
-      <text class="title">内容简介</text>
-      <text class="summary-content">{{book_detail.summary}}</text>
-    </view>
-    <view class="book-info">
-      <text class="title">书本信息</text>
-      <view class="info-content">
-        <view class="l-msg">
-          <text>出版社</text>
-          <text>出版年</text>
-          <text>页数</text>
-          <text>定价</text>
-          <text>装帧</text>
-        </view>
-        <view class="r-msg">
-          <text>{{book_detail.publisher}}</text>
-          <text>{{book_detail.pubdate}}</text>
-          <text>{{book_detail.pages}}</text>
-          <text>{{book_detail.price}}</text>
-          <text>{{book_detail.binding}}</text>
+      <view class="book-comment">
+        <text class="title">短评</text>
+        <view class="comment-content">
+          <block wx:for="{{comment_list}}" wx:key="item">
+            <text>{{item}}</text>
+          </block>
         </view>
       </view>
+      <view class="book-summary">
+        <text class="title">内容简介</text>
+        <text class="summary-content">{{book_detail.summary}}</text>
+      </view>
+      <view class="book-info">
+        <text class="title">书本信息</text>
+        <view class="info-content">
+          <view class="l-msg">
+            <text>出版社</text>
+            <text>出版年</text>
+            <text>页数</text>
+            <text>定价</text>
+            <text>装帧</text>
+          </view>
+          <view class="r-msg">
+            <text>{{book_detail.publisher}}</text>
+            <text>{{book_detail.pubdate}}</text>
+            <text>{{book_detail.pages}}</text>
+            <text>{{book_detail.price}}</text>
+            <text>{{book_detail.binding}}</text>
+          </view>
+        </view>
+      </view>
     </view>
-  </view>
-  <view class="comment-box">
-    <comment></comment>
-  </view>
+    <view class="comment-box">
+      <comment></comment>
+    </view>
+  </block>
+
+  <search-result wx:else bindquerySelected="onQuerySelected" search-list="{{search_list}}" query="{{query}}"></search-result>
 </view>

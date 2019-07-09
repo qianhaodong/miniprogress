@@ -34,7 +34,7 @@ Component({
       
       // app.globalData.query = query
       // 派发事件
-      this.triggerEvent('querySelected', {query: query})
+      this.triggerEvent('onQuerySelected', {query: query})
     }
   }
 })

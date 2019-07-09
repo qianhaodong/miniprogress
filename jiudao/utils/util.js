@@ -24,6 +24,9 @@ const http = (url, callback, key) => {
       } else {
         console.log(res.errMsg)
       }
+    },
+    complete() { // 请求完成时，隐藏加载提示
+      wx.hideLoading()
     }
   })
 

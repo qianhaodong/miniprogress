@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/book/book",
+    "pages/like/like",
     "pages/classic/classic",
-    "pages/favorite/favorite",
+    "pages/book/book",
     "pages/book-detail/book-detail",
     "components/classic-info/classic-info",
     "components/classic-content/classic-content",
@@ -39,12 +39,15 @@
         "selectedIconPath": "images/tab/book_active.png"
       },
       {
-        "pagePath": "pages/favorite/favorite",
+        "pagePath": "pages/like/like",
         "text": "喜欢",
-        "iconPath": "images/tab/favorite.png",
-        "selectedIconPath": "images/tab/favorite_active.png"
+        "iconPath": "images/tab/like.png",
+        "selectedIconPath": "images/tab/like_active.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 8000
   },
   "requiredBackgroundModes": ["audio"],
   "sitemapLocation": "sitemap.json"

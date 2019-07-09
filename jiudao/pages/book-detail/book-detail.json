@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "search-box": "/components/search-box/search-box",
+    "search-result": "/components/search-result/search-result",
     "comment": "/components/comment/comment"
   }
 }

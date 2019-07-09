@@ -1,42 +1,4 @@
-/* .search-result {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+.search-result {
+  border-top: 1px solid #f3f3f3;
+  /* margin-top: 110rpx; */
 }
-
-.search-item {
-  display: flex;
-  align-items: center;
-  margin: 0 30rpx;
-  height: 140rpx;
-  border-bottom: 1rpx solid #eee;
-}
-
-.item-img {
-  margin-right: 20rpx;
-  width: 60rpx;
-  height: 80rpx;
-}
-
-.item-info {
-  flex: 1;
-  width: 80%;
-  height: 80rpx;
-}
-
-.item-name {
-  display: block;
-  font-size: 28rpx;
-  color: #010101;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.item-author {
-  font-size: 20rpx;
-  color: #999;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-} */

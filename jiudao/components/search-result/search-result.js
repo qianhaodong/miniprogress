@@ -1,26 +1,17 @@
 const util = require('../../utils/util.js')
 
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-    searchList: {
-      type: Array,
-      value: []
-    },
     query: {
       type: String,
       value: ''
     }
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
     hot_list: [],
-    history_list: []
+    history_list: [],
+    search_list: []
   },
 
   lifetimes: {
@@ -42,33 +33,29 @@ Component({
           console.log('Request Error')
         }
       }, 'hot_list')
-
-      // util.http(url, this._setRequestHandler, 'hot_list')
     }
   },
 
-  observers: {
+  observers: { // 监听器，监听 query 变化时触发
     query(query) {
       if (query) {
         this._getSearchResult(query)
+      } else { // 当搜索框查询关键字为空时，清空搜索记录
+        this.setData({
+          search_list: []
+        })
       }
     }
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
     onQuerySelected(e) { // 搜索关键字点击事件处理
       let query = e.detail.query
 
       // 设置搜索框搜索关键字
       this.setData({
-        query: query,
         clearIconShow: true
       })
-
-      this._getSearchResult(query)
 
       // 将选择的搜索关键字通过事件传递到父组件
       this.triggerEvent('querySelected', {
@@ -77,14 +64,15 @@ Component({
       })
     },
 
-    onConfirmSearch(e) {
-      this._getSearchResult(e.detail.query)
-    },
-
     _getSearchResult(query) {
       let url = `http://bl.7yue.pro/v1/book/search?appkey=RdshydjBvcYZhMZC&summary=1&q=${query}`
 
-      // 搜索历史
+      // 提示加载loading
+      wx.showLoading({
+        title: '正在加载'
+      })
+
+      // 保存搜索历史
       let history_list = wx.getStorageSync('history_list')
       if (history_list) {
 
@@ -105,7 +93,6 @@ Component({
         this.setData({
           history_list: history_list
         })
-
       } else {
         let history_list = []
         history_list.unshift(query)
@@ -116,40 +103,20 @@ Component({
         })
       }
 
-      // 提示加载loading
-      wx.showLoading({
-        title: '正在加载'
-      })
-
       // 将上一次搜索结果置空
       this.setData({
-        searchList: {}
+        search_list: {}
       })
 
       util.http(url, (result, key) => {
         if (result) {
-          wx.hideLoading()
           this.setData({
             [key]: result.books
           })
-          // console.log(this.data.searchList)
         } else {
           console.log('Request Error')
         }
-      }, 'searchList')
-
-      // util.http(url, this._setRequestHandler, 'search_list')
-    },
-
-    /* _setRequestHandler(result, key) {
-      if (result) {
-        wx.hideLoading()
-        this.setData({
-          [key]: result
-        })
-      } else {
-        console.log('Request Error')
-      }
-    } */
+      }, 'search_list')
+    }
   }
 })

@@ -1,9 +1,8 @@
 <view class="search-result">
-  <view wx:if="{{!searchList.length}}">
-    <search-key wx:if="{{history_list.length}}" catchquerySelected="onQuerySelected" hot-list="{{history_list}}">历史搜索</search-key>
-    <search-key catchquerySelected="onQuerySelected" hot-list="{{hot_list}}">热门搜索</search-key>
-  </view>
-  <block wx:else>
-    <book-list book-list="{{searchList}}"></book-list>
+  <block wx:if="{{!search_list.length}}">
+    <search-key wx:if="{{history_list.length}}" catchonQuerySelected="onQuerySelected" hot-list="{{history_list}}">历史搜索</search-key>
+    <search-key catchonQuerySelected="onQuerySelected" hot-list="{{hot_list}}">热门搜索</search-key>
   </block>
+
+  <book-list wx:else book-list="{{search_list}}"></book-list>
 </view>
