@@ -1,18 +1,22 @@
-// pages/like/like.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    star_list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+    // 获取喜欢的期刊
+    let star_list = wx.getStorageSync('star_list')
+    this.setData({
+      star_list
+    })
   },
 
   /**

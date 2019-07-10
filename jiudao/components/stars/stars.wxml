@@ -1,0 +1,4 @@
+<view>
+  <image catchtap="onStarTap" class="like" src="{{local_status.like_status ? '/images/icon/love-active-icon.png' : '/images/icon/love-icon.png'}}"></image>
+  <text class="like-num">{{local_status.fav_nums}}</text>
+</view>

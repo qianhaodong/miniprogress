@@ -26,6 +26,7 @@ Component({
 
   observers: {
     resultList(result) {
+      // 当结果为空对象时跳过
       if (!Object.keys(result).length) return
 
       let type = result.type            // 获取结果类型

@@ -11,10 +11,8 @@
       </view>
     </view>
     <view class="r-msg">
-      <view>
-        <image class="like" src="{{result.like_status ? '/images/icon/love-active-icon.png' : '/images/icon/love-icon.png'}}"></image>
-        <text class="like-num">{{result.fav_nums}}</text>
-      </view>
+      <stars star-status="{{star_status}}"></stars>
+
       <image class="share" src="/images/icon/share-icon.png"></image>
     </view>
   </view>

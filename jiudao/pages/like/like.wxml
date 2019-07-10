@@ -2,16 +2,36 @@
   <view class="like-hd">
     <image mode="aspectFill" class="like-img" src="/images/like-bg.jpg"></image>
     <view class="mask"></view>
-    <view class="user-info">
+    <view class="user-content">
       <view class="user-bg"></view>
-      <view class="about-me">
-        <image class="about-icon" src="/images/icon/about-icon.png"></image>
-        <text>关于我们</text>
+      <view class="user-info">
+        <image class="user-avatar" src="/images/avatar.jpg"></image>
+        <text class="user-nickname">钱浩东</text>
       </view>
-      <view class="my-books">
-        <text class="book-num"></text>
-        <text>我的书单</text>
+      <view class="user-more">
+        <view class="about-me">
+          <image class="about-icon" src="/images/icon/about-icon.png"></image>
+          <text class="more-text">关于我们</text>
+        </view>
+        <view class="my-books">
+          <text class="book-num">17</text>
+          <text class="more-text">我的书单</text>
+        </view>
       </view>
     </view>
+  </view>
+  <view wx:if="{{star_list.length}}" class="like-bd">
+    <view class="like-title">
+      <image class="decorate-icon" src="/images/icon/decorate-icon.png"></image>
+      <text>喜欢</text>
+    </view>
+    <view class="like-list">
+      <block wx:for="{{star_list}}" wx:key="fav_nums">
+        <like-item star-status="{{item}}"></like-item>
+      </block>
+    </view>
+  </view>
+  <view wx:else class="tips">
+    <text>暂时没有喜欢的内容~</text>
   </view>
 </view>

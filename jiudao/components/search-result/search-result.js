@@ -25,7 +25,6 @@ Component({
 
       util.http(url, (result, key) => {
         if (result) {
-          // wx.hideLoading()
           this.setData({
             [key]: result.hot
           })
@@ -117,6 +116,16 @@ Component({
           console.log('Request Error')
         }
       }, 'search_list')
-    }
+    },
+
+    /* _setRequestHandler(result, key) {
+      if (result) {
+        this.setData({
+          [key]: result
+        })
+      } else {
+        console.log('Request Error')
+      }
+    } */
   }
 })

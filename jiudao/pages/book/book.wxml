@@ -4,7 +4,7 @@
 
   <view wx:if="{{!searchResultShow}}" class="book-content">
     <view class="title">
-      <image src="/images/decorate.png"></image>
+      <image src="/images/icon/decorate-icon.png"></image>
       <text>精选</text>
     </view>
     <book-list book-list="{{book_list}}"></book-list>

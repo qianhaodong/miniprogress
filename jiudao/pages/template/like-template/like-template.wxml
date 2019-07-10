@@ -1,0 +1,7 @@
+<template name="like-template">
+  <!-- <image class="like" src="{{result.like_status ? '/images/icon/love-active-icon.png' : '/images/icon/love-icon.png'}}"></image> -->
+  <view>
+    <image class="like" src="/images/icon/love-icon.png"></image>
+    <text class="like-num">236</text>
+  </view>
+</template>

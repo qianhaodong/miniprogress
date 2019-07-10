@@ -1,0 +1,12 @@
+.like {
+  width: 32rpx;
+  height: 28rpx;
+}
+
+.like-num {
+  position: relative;
+  top: -18rpx;
+  left: 4rpx;
+  font-size: 18rpx;
+  color: #bbb;
+}

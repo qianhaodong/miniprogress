@@ -29,10 +29,30 @@ const http = (url, callback, key) => {
       wx.hideLoading()
     }
   })
+}
 
+// 判断两个对象是否相同
+const isObjectValueEqual = (obj1, obj2) => {
+  let props1 = Object.keys(obj1)
+  let props2 = Object.keys(obj2)
+
+  if (props1.length !== props2.length) {
+    return false
+  }
+
+  for (let i = 0; i < props1.length - 2; i++) {
+    let propName = props1[i]
+
+    if (obj1[propName] !== obj2[propName]) {
+      return false
+    }
+  }
+
+  return true
 }
 
 module.exports = {
-  formatTime: formatTime,
-  http: http
+  formatTime,
+  http,
+  isObjectValueEqual
 }
