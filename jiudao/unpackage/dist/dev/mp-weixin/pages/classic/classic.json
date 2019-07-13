@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "流行",
+  "usingComponents": {
+    "classic-content": "/components/classic-content/classic-content"
+  }
+}

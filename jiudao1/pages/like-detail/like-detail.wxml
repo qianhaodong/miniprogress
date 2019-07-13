@@ -1,0 +1,4 @@
+<view class="like-detail-container">
+  <classic-info result="{{like_detail}}"></classic-info>
+  <classic-content result-list="{{like_detail}}" index="{{index}}"></classic-content>
+</view>

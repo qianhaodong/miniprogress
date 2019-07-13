@@ -1,0 +1,53 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/classic/classic",
+			"style": {
+				"navigationBarTitleText": "流行"
+			}
+		},
+		{
+			"path": "pages/book/book",
+			"style": {
+				"navigationBarTitleText": "书单"
+			}
+		},
+		{
+			"path": "pages/like/like",
+			"style": {
+				"navigationBarTitleText": "喜欢"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "旧岛",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "black",
+		"backgroundColor": "#fff",
+		"color": "#c7c7c7",
+		"selectedColor": "#000",
+		"list": [{
+				"pagePath": "pages/classic/classic",
+				"text": "流行",
+				"iconPath": "static/image/tab/classic.png",
+				"selectedIconPath": "static/image/tab/classic_active.png"
+			},
+			{
+				"pagePath": "pages/book/book",
+				"text": "书单",
+				"iconPath": "static/image/tab/book.png",
+				"selectedIconPath": "static/image/tab/book_active.png"
+			},
+			{
+				"pagePath": "pages/like/like",
+				"text": "喜欢",
+				"iconPath": "static/image/tab/like.png",
+				"selectedIconPath": "static/image/tab/like_active.png"
+			}
+		]
+	}
+}

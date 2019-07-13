@@ -1,0 +1,41 @@
+
+.switch-btn {
+	position: fixed;
+	left: 50%;
+	bottom: 40rpx;
+	margin-left: -294rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding: 0 20rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 588rpx;
+	height: 80rpx;
+	background-color: #f7f7f7;
+}
+.prev,
+.next {
+	width: 23rpx;
+	height: 34rpx;
+}
+.prev-end,
+.next-end {
+	width: 23rpx;
+	height: 34rpx;
+	opacity: 0.3;
+}
+.title {
+	font-size: 24rpx;
+	color: #000;
+}
+

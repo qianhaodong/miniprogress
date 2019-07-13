@@ -1,0 +1,14 @@
+<view class="like-item-container" catchtap="onLikeDetailTap" data-type="{{type}}" data-id="{{id}}">
+  <view class="like-item-hd">
+    <text class="like-item-label">{{likeType}}</text>
+    <stars star-status="{{starStatus}}"></stars>
+  </view>
+  <view class="like-item-cover">
+    <view wx:if="{{isMusicType}}" class="like-music">
+      <image class="like-music-img" src="{{like_item.image}}"></image>
+      <view class="like-music-circle"></view>
+    </view>
+    <image wx:else class="like-item-img" src="{{like_item.image}}"></image>
+  </view>
+  <text class="like-item-content">{{like_item.content}}</text>
+</view>
