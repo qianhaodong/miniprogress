@@ -1,4 +1,8 @@
 {
   "navigationBarTitleText": "书单",
-  "usingComponents": {}
+  "usingComponents": {
+    "book-list": "/components/book-list/book-list",
+    "search-box": "/components/search-box/search-box",
+    "search-result": "/components/search-result/search-result"
+  }
 }

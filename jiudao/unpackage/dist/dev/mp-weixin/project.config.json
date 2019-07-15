@@ -5,17 +5,16 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": false,
-		"postcss": false,
-		"minified": false,
-		"newFeature": true,
-		"autoAudits": false,
-		"checkInvalidKey": true
+		"es6": true,
+		"postcss": true,
+		"minified": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.0",
 	"appid": "wx458cd4db7c340ddb",
 	"projectname": "jiudao",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

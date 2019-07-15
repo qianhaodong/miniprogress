@@ -1,5 +1,5 @@
 
-.switch-btn {
+.switch-btn.data-v-09a5f76e {
 	position: fixed;
 	left: 50%;
 	bottom: 40rpx;
@@ -23,18 +23,18 @@
 	height: 80rpx;
 	background-color: #f7f7f7;
 }
-.prev,
-.next {
+.prev.data-v-09a5f76e,
+.next.data-v-09a5f76e {
 	width: 23rpx;
 	height: 34rpx;
 }
-.prev-end,
-.next-end {
+.prev-end.data-v-09a5f76e,
+.next-end.data-v-09a5f76e {
 	width: 23rpx;
 	height: 34rpx;
 	opacity: 0.3;
 }
-.title {
+.title.data-v-09a5f76e {
 	font-size: 24rpx;
 	color: #000;
 }

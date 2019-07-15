@@ -1,9 +1,9 @@
 
-.like {
+.like.data-v-1247a128 {
 	width: 32rpx;
 	height: 28rpx;
 }
-.like-num {
+.like-num.data-v-1247a128 {
 	position: relative;
 	top: -18rpx;
 	left: 4rpx;

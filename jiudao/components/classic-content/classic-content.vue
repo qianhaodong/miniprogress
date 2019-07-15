@@ -43,7 +43,9 @@
 		props: {
 			classicContent: {
 				type: Object,
-				default: null
+				default() {
+					return {}
+				}
 			},
 			index: { // 记录页面的索引
 				type: Number,
@@ -149,7 +151,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.classic-info {
 		display: flex;
 		justify-content: space-between;

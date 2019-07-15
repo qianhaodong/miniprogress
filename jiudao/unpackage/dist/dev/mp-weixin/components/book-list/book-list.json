@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "book-item": "/components/book-item/book-item"
+  },
+  "component": true
+}

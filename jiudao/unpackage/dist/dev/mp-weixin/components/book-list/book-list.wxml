@@ -1,0 +1,1 @@
+<view class="book-list data-v-e2f46870"><block wx:for="{{bookList}}" wx:for-item="item" wx:for-index="__i0__" wx:key="id"><block class="data-v-e2f46870"><book-item vue-id="{{'1-'+__i0__}}" book-item="{{item}}" class="data-v-e2f46870" bind:__l="__l"></book-item></block></block></view>

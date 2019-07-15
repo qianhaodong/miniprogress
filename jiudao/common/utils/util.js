@@ -1,12 +1,12 @@
-const http = (url, callback) => {
-	wx.request({
+const http = (url, data, resolve) => {
+	uni.request({
 		url,
-		success(res) {
-			if (res.statusCode === 200) {
-				callback(res.data)
-			} else {
-				console.log(res.errMsg)
-			}
+		data,
+		success: res => {
+			resolve(res)
+		},
+		complete: () => {
+			uni.hideLoading()
 		}
 	})
 }

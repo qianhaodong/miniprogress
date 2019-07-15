@@ -12,7 +12,8 @@
 <script>
 	import util from 'common/utils/util'
 	import ClassicContent from 'components/classic-content/classic-content'
-	import { getClassicData } from 'common/api/classic'
+	import { getClassicData, getNextClassicData } from 'common/api/classic'
+	import { ERR_OK } from 'common/api/config'
 	
 	export default {
 		data() {
@@ -29,43 +30,58 @@
 		},
 		
 		methods: {
-			_getClassicData() {
-				getClassicData().then(res => {
-					if (res.statusCode === 200) {
-						this.result = res.data
-					}
-				})
-			},
-			
-			_getPrevClassicData() {
-				
-			},
-			
-			_getNextClassicData() {
-				
-			},
-			
 			onPrevTap() {
 				if (this.index === 8) {
 					this.index -= 1
 					this.isPrevEnd = true
 				}
-				// var url = `http://bl.7yue.pro/v1/classic/${this.index + 2}/previous?appkey=RdshydjBvcYZhMZC`
-
-				util.http(url, this.onRequretHandler)
+				
+				this._getNextClassicData(this.index + 2)
 			},
 
 			onNextTap() {
-				/* if (this.index === 1) {
+				if (this.index === 1) {
 					this.index += 1
 					this.isNextEnd = true
 				}
-				var url = `http://bl.7yue.pro/v1/classic/${this.index}/previous?appkey=RdshydjBvcYZhMZC`
-
-				util.http(url, this.onRequretHandler) */
+				// console.log(this.index)
+				this._getNextClassicData(this.index)
 			},
-
-			onRequretHandler(result) {
+			
+			_getClassicData(params = {}) {
+				getClassicData(params).then(res => {
+					if (res.statusCode === ERR_OK) {
+						this.result = res.data
+						this.index = res.data.index
+						
+						this._setButtonState()
+					}
+				})
+			},
+			
+			_getNextClassicData(index, params = {}) {
+				getNextClassicData(params, index).then(res => {
+					if (res.statusCode === ERR_OK) {
+						this.result = res.data
+						this.index = res.data.index
+						
+						this._setButtonState()
+					}
+				})
+			},
+			
+			_setButtonState() {
+				// 通过索引判断切换按钮状态
+				if (this.index === 8) {
+					this.isPrevEnd = true
+				} else if (this.index === 1) {
+					this.isNextEnd = true
+				} else {
+					this.isPrevEnd = false
+					this.isNextEnd = false
+				}
+			}
+			/* onRequretHandler(result) {
 				if (result) {
 					// 初始化状态变量和模板数据
 					this.result = result
@@ -83,7 +99,7 @@
 				} else {
 					console.log('Callback Error')
 				}
-			}
+			} */
 		},
 		
 		components: {
@@ -92,7 +108,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.switch-btn {
 		position: fixed;
 		left: 50%;

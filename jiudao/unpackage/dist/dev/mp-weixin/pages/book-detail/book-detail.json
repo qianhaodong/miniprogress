@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "书单详情",
+  "usingComponents": {
+    "search-box": "/components/search-box/search-box",
+    "search-result": "/components/search-result/search-result",
+    "comment": "/components/comment/comment"
+  }
+}

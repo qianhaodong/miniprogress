@@ -1,5 +1,5 @@
 
-.classic-info {
+.classic-info.data-v-3fc15f80 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -15,7 +15,7 @@
 	height: 100rpx;
 	padding: 0 30rpx;
 }
-.l-msg {
+.l-msg.data-v-3fc15f80 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -27,31 +27,31 @@
 	font-size: 32rpx;
 	color: #000;
 }
-.order {
+.order.data-v-3fc15f80 {
 	-webkit-box-align: end;
 	-webkit-align-items: flex-end;
 	    -ms-flex-align: end;
 	        align-items: flex-end;
 }
-.num {
+.num.data-v-3fc15f80 {
 	font-size: 58rpx;
 	font-weight: bold;
 }
-.line {
+.line.data-v-3fc15f80 {
 	margin: 0 15rpx;
 	width: 2px;
 	height: 42rpx;
 	background-color: #000;
 }
-.date {
+.date.data-v-3fc15f80 {
 	font-size: 20rpx;
 }
-.month {
+.month.data-v-3fc15f80 {
 	font-size: 24rpx;
 	display: block;
 	letter-spacing: 2rpx;
 }
-.r-msg {
+.r-msg.data-v-3fc15f80 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -61,21 +61,21 @@
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-.share {
+.share.data-v-3fc15f80 {
 	width: 28rpx;
 	height: 28rpx;
 	margin-left: 44rpx;
 }
-.classic-content {
+.classic-content.data-v-3fc15f80 {
 	position: relative;
 }
-.content-img {
+.content-img.data-v-3fc15f80 {
 	width: 100%;
 	height: 500rpx;
 	margin-bottom: 112rpx;
 	vertical-align: bottom;
 }
-.music-play {
+.music-play.data-v-3fc15f80 {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -92,15 +92,14 @@
 	margin-bottom: 112rpx;
 	height: 500rpx;
 }
-.music-img {
+.music-img.data-v-3fc15f80 {
 	width: 420rpx;
 	height: 420rpx;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	-webkit-box-shadow: 0 0 20rpx 4rpx #ccc;
 	        box-shadow: 0 0 20rpx 4rpx #ccc;
 }
-.btn-play {
+.btn-play.data-v-3fc15f80 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -121,30 +120,29 @@
 	        align-items: center;
 	width: 120rpx;
 	height: 120rpx;
-	-webkit-border-radius: 50%;
-	        border-radius: 50%;
+	border-radius: 50%;
 	background-color: #fff;
 	-webkit-box-shadow: 0 0 12rpx 2rpx #ccc inset;
 	        box-shadow: 0 0 12rpx 2rpx #ccc inset;
 }
-.play {
+.play.data-v-3fc15f80 {
 	width: 28rpx;
 	height: 44rpx;
 	margin-left: 12rpx;
 }
-.pause {
+.pause.data-v-3fc15f80 {
 	width: 28rpx;
 	height: 44rpx;
 	margin-left: 4rpx;
 }
-.content-tips {
+.content-tips.data-v-3fc15f80 {
 	position: absolute;
 	left: 30rpx;
 	top: 442rpx;
 	width: 46rpx;
 	height: 142rpx;
 }
-.content-txt {
+.content-txt.data-v-3fc15f80 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "user-star": "/components/user-star/user-star"
+  },
+  "component": true
+}

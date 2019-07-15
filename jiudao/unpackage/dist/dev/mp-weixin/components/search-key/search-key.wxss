@@ -1,0 +1,45 @@
+
+.search-record.data-v-5cf54dfc {
+	padding: 30rpx;
+}
+.search-hd.data-v-5cf54dfc {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-bottom: 30rpx;
+}
+.line-icon.data-v-5cf54dfc {
+	margin-right: 20rpx;
+	width: 8rpx;
+	height: 28rpx;
+	background-color: #010101;
+}
+.title.data-v-5cf54dfc {
+	font-size: 28rpx;
+	color: #010101;
+}
+.search-key-list.data-v-5cf54dfc {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	padding-left: 28rpx;
+}
+.search-key.data-v-5cf54dfc {
+	/* float: left; */
+	margin: 0 20rpx 20rpx 0;
+	padding: 10rpx 20rpx;
+	font-size: 28rpx;
+	color: #666;
+	background-color: #f7f7f7;
+	border-radius: 4rpx;
+}
+

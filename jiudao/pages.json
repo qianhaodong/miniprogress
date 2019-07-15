@@ -18,7 +18,13 @@
 				"navigationBarTitleText": "喜欢"
 			}
 		}
-	],
+        ,{
+            "path" : "pages/book-detail/book-detail",
+            "style" : {
+				"navigationBarTitleText": "书单详情"
+			}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "旧岛",

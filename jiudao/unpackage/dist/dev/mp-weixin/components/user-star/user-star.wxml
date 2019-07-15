@@ -1,1 +1,1 @@
-<view><image class="like" src="/static/image/icon/love-icon.png" data-event-opts="{{[['tap',[['onStarTap',['$event']]]]]}}" bindtap="__e"></image><text class="like-num">{{starNums}}</text></view>
+<view class="data-v-1247a128"><image class="like data-v-1247a128" src="/static/image/icon/love-icon.png" data-event-opts="{{[['tap',[['onStarTap',['$event']]]]]}}" bindtap="__e"></image><text class="like-num data-v-1247a128">{{starNums}}</text></view>
