@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App'
 import store from './store'
 
+// 将状态管理对象添加到 Vue 原型对象中
+Vue.prototype.$store = store
+
 Vue.config.productionTip = false
 
 App.mpType = 'app'

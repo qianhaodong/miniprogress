@@ -14,7 +14,7 @@
 						<image class="about-icon" src="/static/image/icon/about-icon.png"></image>
 						<text class="more-text">关于我们</text>
 					</view>
-					<view class="my-books">
+					<view class="my-books" @click="onLikeBooks">
 						<text class="book-num">17</text>
 						<text class="more-text">我的书单</text>
 					</view>
@@ -27,8 +27,8 @@
 				<text>喜欢</text>
 			</view>
 			<view class="like-list">
-				<block v-for="item in likeList" :key="item">
-					<like-item :star-status="item"></like-item>
+				<block v-for="item in likeList" :key="item.index">
+					<like-item :like-item="item"></like-item>
 				</block>
 			</view>
 		</view>
@@ -39,38 +39,36 @@
 </template>
 
 <script>
+	import LikeItem from 'components/like-item/like-item'
+	import { mapGetters } from 'vuex'
+	
 	export default {
 		data() {
 			return {
-				likeList: []
+				
 			}
 		},
 
 		created() {
-			// this._getLikeList()
+			
+		},
+		
+		computed: {
+			...mapGetters([
+				'likeList'
+			])
 		},
 
 		methods: {
-			/* _getLikeList() {
-				// 获取喜欢的期刊
-				let starList = wx.getStorageSync('starList')
-				if (starList) {
-					let likeList = [] // 用来存储喜欢项的列表
-
-					starList.forEach((item, index) => {
-						// 获取喜欢状态
-						let {
-							like_status
-						} = item
-
-						if (like_status) { // 如果状态为喜欢，则添加
-							like_list.push(item)
-						}
-
-						this.likeList = likeList
-					})
-				}
-			} */
+			onLikeBooks() {
+				uni.navigateTo({
+					url: '/pages/favorite-books/favorite-books'
+				})
+			}
+		},
+		
+		components: {
+			LikeItem
 		}
 	}
 </script>

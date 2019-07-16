@@ -1,0 +1,109 @@
+
+.like-item-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-bottom: 30rpx;
+	width: 330rpx;
+	height: 470rpx;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 28rpx 8rpx #eee;
+	        box-shadow: 0 0 28rpx 8rpx #eee;
+}
+.like-item-hd {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding: 0 20rpx;
+	height: 80rpx;
+}
+.like {
+	width: 32rpx;
+	height: 28rpx;
+}
+.like-num {
+	position: relative;
+	top: -18rpx;
+	left: 4rpx;
+	font-size: 18rpx;
+	color: #bbb;
+}
+.like-item-label {
+	display: block;
+	width: 72rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	font-size: 24rpx;
+	color: #333;
+	background-color: #f2f2f2;
+}
+.like-item-img {
+	width: 100%;
+	height: 240rpx;
+}
+.like-music {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	position: relative;
+	width: 100;
+	height: 240rpx;
+}
+.like-music-img {
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 20rpx #ccc;
+	        box-shadow: 0 0 20rpx #ccc;
+}
+.like-music-circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	width: 68rpx;
+	height: 68rpx;
+	background-color: #fff;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 18rpx 2rpx #ccc inset;
+	        box-shadow: 0 0 18rpx 2rpx #ccc inset;
+}
+.like-item-content {
+	display: block;
+	font-size: 28rpx;
+	color: #999;
+	/* letter-spacing: 1rpx; */
+	line-height: 42rpx;
+	padding: 32rpx 20rpx 0;
+	/* white-space: nowrap; */
+	/* text-overflow: ellipsis; */
+	/* overflow: hidden; */
+}
+

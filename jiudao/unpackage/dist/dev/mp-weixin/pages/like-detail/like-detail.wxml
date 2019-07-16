@@ -1,0 +1,1 @@
+<view><classic-content vue-id="1" classic-content="{{result}}" index="{{index}}" bind:__l="__l"></classic-content></view>

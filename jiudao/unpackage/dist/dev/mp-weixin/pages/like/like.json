@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "喜欢",
-  "usingComponents": {}
+  "usingComponents": {
+    "like-item": "/components/like-item/like-item"
+  }
 }

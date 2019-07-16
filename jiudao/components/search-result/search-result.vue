@@ -5,7 +5,7 @@
 			<search-key @on-query-selected="onQuerySelected" :search-key-list="hotList">热门搜索</search-key>
 		</block>
 
-		<book-list v-else :book-list="searchList"></book-list>
+		<book-list v-else :book-list="searchList">搜索列表</book-list>
 	</view>
 </template>
 

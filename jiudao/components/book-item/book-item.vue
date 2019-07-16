@@ -31,7 +31,7 @@
 				// 跳转到书单详情页
 				uni.navigateTo({
 					url: `/pages/book-detail/book-detail?bookid=${bookid}`
-				});
+				})
 			}
 		}
 	}

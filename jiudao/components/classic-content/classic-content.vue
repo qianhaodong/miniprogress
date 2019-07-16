@@ -13,7 +13,8 @@
 				</view>
 			</view>
 			<view class="r-msg">
-				<user-star :star-nums="favNums"></user-star>
+				<image @click="toggleLikeState(classicContent)" class="like" :src="getLikeImg(classicContent)"></image>
+				<text class="like-num"></text>
 				<image class="share" src="/static/image/icon/share-icon.png"></image>
 			</view>
 		</view>
@@ -22,7 +23,7 @@
 			<view v-if="musicShow" class="music-play">
 				<image class="music-img" :src="classicContent.image"></image>
 				<view class="btn-play" @click="onMusicPlay">
-					<image :class="isPlayingMusic ? 'pause' : 'play'" :src="isPlayingMusic ? '/static/image/icon/pause-icon.png' : '/static/image/icon/play-icon.png'"></image>
+					<image :class="isPlayingIcon ? 'pause' : 'play'" :src="isPlayingIcon ? '/static/image/icon/pause-icon.png' : '/static/image/icon/play-icon.png'"></image>
 				</view>
 			</view>
 			<block v-else>
@@ -37,9 +38,12 @@
 </template>
 
 <script>
-	import UserStar from 'components/user-star/user-star'
+	import { likeMixin } from 'common/utils/mixin'
+	import { mapGetters, mapMutations } from 'vuex'
 	
 	export default {
+		mixins: [likeMixin],
+		
 		props: {
 			classicContent: {
 				type: Object,
@@ -50,22 +54,27 @@
 			index: { // 记录页面的索引
 				type: Number,
 				default: 0
+			},
+			isPlaying: {
+				type: Boolean,
+				default: false
 			}
 		},
 
 		data() {
 			return {
 				musicShow: false, // 记录音乐播放器显示状态
-				isPlayingMusic: false, // 记录音乐播放状态
-				adminMusicChange: false, // 记录后台操作音乐播放与暂停的状态
+				isPlayingIcon: false, // 记录音乐播放图标
 				category: 'movie', // 记录类型图标
-				currentIndex: 0, // 记录当前项索引
-				favNums: 0
+				currentIndex: 0 // 记录当前项索引
 			}
 		},
 
-		created() {
-			// console.log(this.index)
+		computed: {
+			...mapGetters([
+				'playing',
+				'currentPlayIndex'
+			])
 		},
 
 		methods: {
@@ -78,15 +87,17 @@
 					coverImgUrl: this.classicContent.image
 				}
 
-				if (this.isPlayingMusic) {
+				if (this.playing) {
 					backgroundAudioManager.pause()
-					this.isPlayingMusic = false
+					this.isPlayingIcon = false
+					this.setPlayingState(false)
 				} else { // 初始化音乐播放
 					// 为 backgroundAudioManager 对象添加属性
 					Object.assign(backgroundAudioManager, config)
 					
-					this.isPlayingMusic = true
-					this.currentIndex = this.classicContent.index // 记录当前播放音乐索引
+					this.isPlayingIcon = true
+					this.setPlayingState(true) // 更改音乐播放状态
+					this.setCurrentPlayIndex(this.classicContent.index) // 记录当前播放音乐索引
 				}
 
 				this.setMusicMonitor(backgroundAudioManager)
@@ -96,30 +107,44 @@
 				let that = this // 解决回调中 this 问题
 
 				backgroundAudioManager.onPlay(function() { // 监听播放状态
-					that.adminMusicChange = false
-					if (that.index === that.currentIndex) {
-						that.isPlayingMusic = true
+					that.setPlayingState(true)
+					if (that.index === that.currentPlayIndex) {
+						that.isPlayingIcon = true
 					}
 				})
 				backgroundAudioManager.onPause(function() { // 监听暂停状态
-					that.adminMusicChange = true
-					if (that.index === that.currentIndex) {
-						that.isPlayingMusic = false
+					that.setPlayingState(false)
+					if (that.index === that.currentPlayIndex) {
+						// console.log(that.isPlayingIcon);
+						that.isPlayingIcon = false
+						// console.log(that.isPlayingIcon);
 					}
 				})
 				backgroundAudioManager.onEnded(function() { // 监听自然播放完成状态
 					// 播放完成之后清除播放状态缓存
-					that.isPlayingMusic = false
-					that.currentIndex = 0
+					that.isPlayingIcon = false
+					that.setPlayingState(false)
+					that.setCurrentPlayIndex(-1)
 				})
-			}
+			},
+			
+			...mapMutations({
+				setPlayingState: 'SET_PLAYING_STATE',
+				setCurrentPlayIndex: 'SET_CURRENTPLAY_INDEX'
+			})
 		},
 
 		watch: {
 			classicContent(newVal, oldVal) {
-				let type = newVal.type // 获取结果类型
+				let type = newVal.type // 获取类型
 				
-				this.favNums = newVal.fav_nums
+				// 当音乐播放状态为播放时，且正在播放音乐索引和当前页面音乐索引相同时，显示播放状态，否则显示暂停状态
+				if (this.playing && this.index === this.currentPlayIndex) {
+					this.isPlayingIcon = true
+				} else {
+					this.isPlayingIcon = false
+				}
+				
 				// 判断类型，显示对应icon和显示音乐播放器
 				switch (type) {
 					case 100:
@@ -129,24 +154,17 @@
 					case 200:
 						this.category = 'music'
 						this.musicShow = true
-						this.isPlayingMusic = false
-						// 当正在播放音乐状态为播放时，且正在播放音乐索引和当前页面音乐索引相同时，显示播放状态，否则显示暂停状态
-						if (!this.adminMusicChange && this.index === this.currentIndex) {
-							this.isPlayingMusic = true
-						} else if (this.adminMusicChange && this.index === this.currentIndex) {
-							this.isPlayingMusic = false
-						}
 						break
 					case 300:
 						this.category = 'poetry'
 						this.musicShow = false
 						break
 				}
+			},
+			
+			isPlaying(flag) {
+				this.isPlayingIcon = flag
 			}
-		},
-		
-		components: {
-			UserStar
 		}
 	}
 </script>
@@ -196,6 +214,19 @@
 	.r-msg {
 		display: flex;
 		align-items: center;
+	}
+	
+	.like {
+		width: 32rpx;
+		height: 28rpx;
+	}
+	
+	.like-num {
+		position: relative;
+		top: -18rpx;
+		left: 4rpx;
+		font-size: 18rpx;
+		color: #bbb;
 	}
 
 	.share {

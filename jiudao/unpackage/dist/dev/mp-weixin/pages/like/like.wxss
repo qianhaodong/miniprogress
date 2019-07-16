@@ -74,15 +74,13 @@
 
 
 
-
-
 /* 如果 page（当前页面）要设置背景颜色，那么 style 样式必须是全局的，不能添加 scoped ，否则无效！ */
 page {
 	background-color: #f5f5f5;
 }
 
 
-.like-container.data-v-72fc2a28 {
+.like-container.data-v-5fe81e20 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -93,7 +91,7 @@ page {
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.like-hd.data-v-72fc2a28 {
+.like-hd.data-v-5fe81e20 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -112,7 +110,7 @@ page {
 	height: 556rpx;
 	z-index: 1;
 }
-.like-img.data-v-72fc2a28 {
+.like-img.data-v-5fe81e20 {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -120,7 +118,7 @@ page {
 	height: 100%;
 	z-index: -2;
 }
-.mask.data-v-72fc2a28 {
+.mask.data-v-5fe81e20 {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -129,12 +127,12 @@ page {
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: -1;
 }
-.user-content.data-v-72fc2a28 {
+.user-content.data-v-5fe81e20 {
 	position: relative;
 	width: 100%;
 	height: 300rpx;
 }
-.user-bg.data-v-72fc2a28 {
+.user-bg.data-v-5fe81e20 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -144,11 +142,11 @@ page {
 	border-right: 750rpx solid #fff;
 	z-index: -1;
 }
-.about-icon.data-v-72fc2a28 {
+.about-icon.data-v-5fe81e20 {
 	width: 34rpx;
 	height: 34rpx;
 }
-.user-info.data-v-72fc2a28 {
+.user-info.data-v-5fe81e20 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -163,17 +161,17 @@ page {
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-.user-avatar.data-v-72fc2a28 {
+.user-avatar.data-v-5fe81e20 {
 	margin-bottom: 8rpx;
 	height: 120rpx;
 	width: 120rpx;
 	border-radius: 50%;
 }
-.user-nickname.data-v-72fc2a28 {
+.user-nickname.data-v-5fe81e20 {
 	font-size: 34rpx;
 	color: #000;
 }
-.user-more.data-v-72fc2a28 {
+.user-more.data-v-5fe81e20 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -184,8 +182,8 @@ page {
 	        justify-content: space-between;
 	padding: 20rpx 120rpx 0;
 }
-.about-me.data-v-72fc2a28,
-.my-books.data-v-72fc2a28 {
+.about-me.data-v-5fe81e20,
+.my-books.data-v-5fe81e20 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -204,20 +202,20 @@ page {
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-.more-text.data-v-72fc2a28 {
+.more-text.data-v-5fe81e20 {
 	font-size: 24rpx;
 	color: #999;
 }
-.book-num.data-v-72fc2a28 {
+.book-num.data-v-5fe81e20 {
 	font-size: 36rpx;
 	color: #000;
 }
-.like-title.data-v-72fc2a28 {
+.like-title.data-v-5fe81e20 {
 	position: relative;
 	padding: 42rpx 0 20rpx;
 	text-align: center;
 }
-.like-title image.data-v-72fc2a28 {
+.like-title image.data-v-5fe81e20 {
 	position: absolute;
 	width: 107rpx;
 	height: 32rpx;
@@ -225,13 +223,13 @@ page {
 	top: 50%;
 	margin: -4rpx 0 0 -40rpx;
 }
-.like-title text.data-v-72fc2a28 {
+.like-title text.data-v-5fe81e20 {
 	font-size: 34rpx;
 	color: #000;
 	position: relative;
 	z-index: 1;
 }
-.like-list.data-v-72fc2a28 {
+.like-list.data-v-5fe81e20 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -245,7 +243,7 @@ page {
 	        flex-wrap: wrap;
 	padding: 0 30rpx;
 }
-.tips.data-v-72fc2a28 {
+.tips.data-v-5fe81e20 {
 	padding-top: 220rpx;
 	text-align: center;
 	color: #666;

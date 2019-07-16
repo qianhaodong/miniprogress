@@ -3,7 +3,9 @@
     "pages/classic/classic",
     "pages/book/book",
     "pages/like/like",
-    "pages/book-detail/book-detail"
+    "pages/book-detail/book-detail",
+    "pages/like-detail/like-detail",
+    "pages/favorite-books/favorite-books"
   ],
   "subPackages": [],
   "window": {

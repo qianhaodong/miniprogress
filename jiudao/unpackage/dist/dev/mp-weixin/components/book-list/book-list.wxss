@@ -1,5 +1,24 @@
 
-.book-list.data-v-e2f46870 {
+.title.data-v-6db72e60 {
+	position: relative;
+	text-align: center;
+	padding-top: 32rpx;
+}
+.title image.data-v-6db72e60 {
+	position: absolute;
+	width: 107rpx;
+	height: 32rpx;
+	left: 50%;
+	top: 50%;
+	margin: 4rpx 0 0 -70rpx;
+}
+.title text.data-v-6db72e60 {
+	font-size: 34rpx;
+	color: #000;
+	position: relative;
+	z-index: 1;
+}
+.book-list.data-v-6db72e60 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;

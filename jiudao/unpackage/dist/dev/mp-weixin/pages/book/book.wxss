@@ -1,5 +1,5 @@
 
-.book-container.data-v-d9d66530 {
+.book-container.data-v-fffe7d40 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -11,40 +11,14 @@
 	        flex-direction: column;
 	padding-top: 110rpx;
 }
-.book-content.data-v-d9d66530 {
+.book-content.data-v-fffe7d40 {
 	background-color: #f9f9f9;
 }
-.title.data-v-d9d66530 {
-	position: relative;
-	text-align: center;
-	padding-top: 32rpx;
-}
-.title image.data-v-d9d66530 {
-	position: absolute;
-	width: 107rpx;
-	height: 32rpx;
-	left: 50%;
-	top: 50%;
-	margin: 4rpx 0 0 -70rpx;
-}
-.title text.data-v-d9d66530 {
-	font-size: 34rpx;
-	color: #000;
-	position: relative;
-	z-index: 1;
-}
-.book-list.data-v-d9d66530 {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
+
+/* .book-list {
 	display: flex;
-	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
-	        flex-wrap: wrap;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	padding: 30rpx 90rpx 0;
-}
+} */
 

@@ -4,11 +4,7 @@
 		 @on-cancel="onCancel"></search-box>
 
 		<view v-show="!searchResultShow" class="book-content">
-			<view class="title">
-				<image src="/static/image/icon/decorate-icon.png"></image>
-				<text>精选</text>
-			</view>
-			<book-list :book-list="bookList"></book-list>
+			<book-list :book-list="bookList">精选</book-list>
 		</view>
 
 		<view v-show="searchResultShow">
@@ -38,6 +34,14 @@
 		onLoad() {
 			this._getHotBookList()
 		},
+		
+		/* onPullDownRefresh() {
+			console.log('pullDown');
+		},
+		
+		onReachBottom() {
+			console.log('reachBottom');
+		}, */
 
 		methods: {
 			_getHotBookList(params = {}) {
@@ -68,32 +72,10 @@
 		background-color: #f9f9f9;
 	}
 
-	.title {
-		position: relative;
-		text-align: center;
-		padding-top: 32rpx;
-	}
-
-	.title image {
-		position: absolute;
-		width: 107rpx;
-		height: 32rpx;
-		left: 50%;
-		top: 50%;
-		margin: 4rpx 0 0 -70rpx;
-	}
-
-	.title text {
-		font-size: 34rpx;
-		color: #000;
-		position: relative;
-		z-index: 1;
-	}
-
-	.book-list {
+	/* .book-list {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		padding: 30rpx 90rpx 0;
-	}
+	} */
 </style>

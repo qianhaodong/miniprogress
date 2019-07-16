@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "classic-content": "/components/classic-content/classic-content"
+  }
+}

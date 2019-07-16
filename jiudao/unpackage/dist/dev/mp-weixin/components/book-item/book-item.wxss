@@ -1,5 +1,5 @@
 
-.book-item.data-v-39c5a51c {
+.book-item.data-v-1dbbca7a {
 	position: relative;
 	margin-bottom: 60rpx;
 	width: 240rpx;
@@ -9,14 +9,14 @@
 	-webkit-box-shadow: 0 0 28rpx 8rpx #eee;
 	        box-shadow: 0 0 28rpx 8rpx #eee;
 }
-.book-img.data-v-39c5a51c {
+.book-img.data-v-1dbbca7a {
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 }
-.book-info.data-v-39c5a51c {
+.book-info.data-v-1dbbca7a {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -36,7 +36,7 @@
 	        box-sizing: border-box;
 	background-color: #fff;
 }
-.book-name.data-v-39c5a51c {
+.book-name.data-v-1dbbca7a {
 	font-size: 24rpx;
 	color: #1f1f1f;
 	overflow: hidden;
@@ -44,7 +44,7 @@
 	-o-text-overflow: ellipsis;
 	   text-overflow: ellipsis;
 }
-.book-author.data-v-39c5a51c {
+.book-author.data-v-1dbbca7a {
 	font-size: 20rpx;
 	color: #999;
 	white-space: nowrap;
@@ -52,16 +52,16 @@
 	   text-overflow: ellipsis;
 	overflow: hidden;
 }
-.book-user-info.data-v-39c5a51c {
+.book-user-info.data-v-1dbbca7a {
 	margin-top: 24rpx;
 	text-align: right;
 	font-size: 20rpx;
 	color: #bbb;
 }
-.like-num.data-v-39c5a51c {
+.like-num.data-v-1dbbca7a {
 	margin-right: 4rpx;
 }
-.comment-num.data-v-39c5a51c {
+.comment-num.data-v-1dbbca7a {
 	margin-right: 4rpx;
 }
 

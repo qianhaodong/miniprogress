@@ -18,7 +18,7 @@ export function getHotSearchKey(params) {
 
 // 获取搜索列表
 export function getSearchList(params) {
-	const url = BASE_URL + `/book/search`
+	const url = BASE_URL + '/book/search'
 	const data = Object.assign(commonParams, params)
 	
 	uni.showLoading({

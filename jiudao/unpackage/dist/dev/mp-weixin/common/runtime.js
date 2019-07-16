@@ -102,11 +102,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/classic-content/classic-content":1,"components/search-result/search-result":1,"components/book-list/book-list":1,"components/search-box/search-box":1,"components/comment/comment":1,"components/user-star/user-star":1,"components/search-key/search-key":1,"components/book-item/book-item":1};
+/******/ 		var cssChunks = {"components/classic-content/classic-content":1,"components/search-result/search-result":1,"components/book-list/book-list":1,"components/search-box/search-box":1,"components/like-item/like-item":1,"components/comment/comment":1,"components/search-key/search-key":1,"components/book-item/book-item":1,"components/user-star/user-star":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/classic-content/classic-content":"components/classic-content/classic-content","components/search-result/search-result":"components/search-result/search-result","components/book-list/book-list":"components/book-list/book-list","components/search-box/search-box":"components/search-box/search-box","components/comment/comment":"components/comment/comment","components/user-star/user-star":"components/user-star/user-star","components/search-key/search-key":"components/search-key/search-key","components/book-item/book-item":"components/book-item/book-item"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/classic-content/classic-content":"components/classic-content/classic-content","components/search-result/search-result":"components/search-result/search-result","components/book-list/book-list":"components/book-list/book-list","components/search-box/search-box":"components/search-box/search-box","components/like-item/like-item":"components/like-item/like-item","components/comment/comment":"components/comment/comment","components/search-key/search-key":"components/search-key/search-key","components/book-item/book-item":"components/book-item/book-item","components/user-star/user-star":"components/user-star/user-star"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

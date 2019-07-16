@@ -1,5 +1,5 @@
 
-.switch-btn.data-v-09a5f76e {
+.switch-btn.data-v-23991166 {
 	position: fixed;
 	left: 50%;
 	bottom: 40rpx;
@@ -23,18 +23,18 @@
 	height: 80rpx;
 	background-color: #f7f7f7;
 }
-.prev.data-v-09a5f76e,
-.next.data-v-09a5f76e {
+.prev.data-v-23991166,
+.next.data-v-23991166 {
 	width: 23rpx;
 	height: 34rpx;
 }
-.prev-end.data-v-09a5f76e,
-.next-end.data-v-09a5f76e {
+.prev-end.data-v-23991166,
+.next-end.data-v-23991166 {
 	width: 23rpx;
 	height: 34rpx;
 	opacity: 0.3;
 }
-.title.data-v-09a5f76e {
+.title.data-v-23991166 {
 	font-size: 24rpx;
 	color: #000;
 }

@@ -43,7 +43,7 @@
 				</view>
 			</view>
 			<view class="comment-box">
-				<comment></comment>
+				<comment :data="bookDetail"></comment>
 			</view>
 		</view>
 		
@@ -90,6 +90,7 @@
 				getBookDetail(params, bookid).then(res => {
 					if (res.statusCode === ERR_OK) {
 						this.bookDetail = res.data
+						// console.log(res);
 					}
 				})
 			}

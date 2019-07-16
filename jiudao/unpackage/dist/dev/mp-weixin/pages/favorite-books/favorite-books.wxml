@@ -1,0 +1,1 @@
+<view><book-list vue-id="1" book-list="{{likeBookList}}" bind:__l="__l" vue-slots="{{['default']}}">喜欢书单</book-list></view>

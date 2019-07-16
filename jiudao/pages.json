@@ -24,6 +24,16 @@
 				"navigationBarTitleText": "书单详情"
 			}
         }
+        ,{
+            "path" : "pages/like-detail/like-detail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/favorite-books/favorite-books",
+            "style" : {
+				"navigationBarTitleText": "我的书单"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -529,7 +529,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6732,7 +6732,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6753,14 +6753,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6836,7 +6836,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8302,16 +8302,16 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\book.js":
-/*!******************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/common/api/book.js ***!
-  \******************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\book.js":
+/*!*************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/api/book.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getHotBookList = getHotBookList;exports.getBookDetail = getBookDetail;var _config = __webpack_require__(/*! ./config */ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\config.js");
-var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\HbuilderX-Storage\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getHotBookList = getHotBookList;exports.getBookDetail = getBookDetail;var _config = __webpack_require__(/*! ./config */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js");
+var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 获取精选书籍
 function getHotBookList(params) {
@@ -8346,16 +8346,16 @@ function getBookDetail(params, bookid) {
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\classic.js":
-/*!*********************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/common/api/classic.js ***!
-  \*********************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\classic.js":
+/*!****************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/api/classic.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getClassicData = getClassicData;exports.getNextClassicData = getNextClassicData;var _config = __webpack_require__(/*! ./config */ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\config.js");
-var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\HbuilderX-Storage\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getClassicData = getClassicData;exports.getNextClassicData = getNextClassicData;var _config = __webpack_require__(/*! ./config */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js");
+var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 流行数据获取
 function getClassicData(params) {
@@ -8390,10 +8390,10 @@ function getNextClassicData(params, index) {
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\config.js":
-/*!********************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/common/api/config.js ***!
-  \********************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js":
+/*!***************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/api/config.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8410,16 +8410,45 @@ exports.ERR_OK = ERR_OK;var commonParams = {
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\search.js":
-/*!********************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/common/api/search.js ***!
-  \********************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\like.js":
+/*!*************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/api/like.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getHotSearchKey = getHotSearchKey;exports.getSearchList = getSearchList;var _config = __webpack_require__(/*! ./config */ "D:\\HbuilderX-Storage\\jiudao\\common\\api\\config.js");
-var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\HbuilderX-Storage\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getLikeDetail = getLikeDetail;var _config = __webpack_require__(/*! ./config */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js");
+var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 喜欢项详情数据
+function getLikeDetail(params, type, id) {
+  var url = _config.BASE_URL + "/classic/".concat(type, "/").concat(id);
+  var data = Object.assign(_config.commonParams, params);
+
+  uni.showLoading({
+    title: '加载中',
+    mask: false });
+
+
+  return new Promise(function (resolve, reject) {
+    _util.default.http(url, data, resolve);
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\search.js":
+/*!***************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/api/search.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getHotSearchKey = getHotSearchKey;exports.getSearchList = getSearchList;var _config = __webpack_require__(/*! ./config */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js");
+var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 获取热搜关键字
 function getHotSearchKey(params) {
@@ -8438,7 +8467,7 @@ function getHotSearchKey(params) {
 
 // 获取搜索列表
 function getSearchList(params) {
-  var url = _config.BASE_URL + "/book/search";
+  var url = _config.BASE_URL + '/book/search';
   var data = Object.assign(_config.commonParams, params);
 
   uni.showLoading({
@@ -8454,21 +8483,110 @@ function getSearchList(params) {
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\common\\utils\\mixin.js":
-/*!*********************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/common/utils/mixin.js ***!
-  \*********************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\catch.js":
+/*!****************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/utils/catch.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.searchMixin = void 0; // 搜索功能共享
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.saveLikeItem = saveLikeItem;exports.deleteLikeItem = deleteLikeItem;exports.saveLikeBookItem = saveLikeBookItem;exports.deleteLikeBookItem = deleteLikeBookItem;exports.loadLikeList = loadLikeList;exports.loadLikeBookList = loadLikeBookList;var LIKE_LIST = '__likeList__'; // 本地存储喜欢列表
+var LIKE_BOOK_LIST = '__likeBookList__'; // 本地存储喜欢列表
+
+function insertArray(arr, val, compare) {
+  // 先判断本地存储中有无当前项的点赞信息
+  var index = arr.findIndex(compare);
+
+  if (index > -1) {// 如果有当前项，则删除
+    arr.splice(index, 1);
+  }
+  // 向数组开头插入当前项
+  arr.unshift(val);
+}
+
+function deleteArray(arr, val, compare) {
+  // 先判断本地存储中有无当前项的点赞信息
+  var index = arr.findIndex(compare);
+
+  if (index > -1) {// 如果有当前项，则删除
+    arr.splice(index, 1);
+  }
+}
+
+function saveLikeItem(item) {// 保存期刊到喜欢列表
+  var likeList = uni.getStorageSync(LIKE_LIST) || [];
+
+  insertArray(likeList, item, function (value) {
+    return value.id === item.id && value.type === item.type;
+  });
+
+  uni.setStorageSync(LIKE_LIST, likeList);
+  return likeList;
+}
+
+function deleteLikeItem(item) {// 将期刊从喜欢列表中删除
+  var likeList = uni.getStorageSync(LIKE_LIST) || [];
+
+  deleteArray(likeList, item, function (value) {
+    return value.id === item.id && value.type === item.type;
+  });
+
+  uni.setStorageSync(LIKE_LIST, likeList);
+  return likeList;
+}
+
+function saveLikeBookItem(item) {// 保存书单到喜欢列表
+  var likeBookList = uni.getStorageSync(LIKE_BOOK_LIST) || [];
+
+  insertArray(likeBookList, item, function (value) {
+    return value.id === item.id;
+  });
+
+  uni.setStorageSync(LIKE_BOOK_LIST, likeBookList);
+  return likeBookList;
+}
+
+function deleteLikeBookItem(item) {// 将书单从喜欢列表中删除
+  var likeBookList = uni.getStorageSync(LIKE_BOOK_LIST) || [];
+
+  deleteArray(likeBookList, item, function (value) {
+    return value.id === item.id;
+  });
+
+  uni.setStorageSync(LIKE_BOOK_LIST, likeBookList);
+  return likeBookList;
+}
+
+// 从本地加载期刊喜欢列表
+function loadLikeList() {
+  return uni.getStorageSync(LIKE_LIST) || [];
+}
+
+// 从本地加载书单喜欢列表
+function loadLikeBookList() {
+  return uni.getStorageSync(LIKE_BOOK_LIST) || [];
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\mixin.js":
+/*!****************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/utils/mixin.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.likeMixin = exports.searchMixin = void 0;var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+// 搜索功能共享
 var searchMixin = {
   data: function data() {
     return {
       searchResultShow: false,
-      query: '',
-      message: '帕帕古' };
+      query: '' };
 
   },
 
@@ -8489,19 +8607,59 @@ var searchMixin = {
 
     querySelected: function querySelected(e) {// 设置 search-result 组件传递来的 query 值
       this.query = e.query;
-    } } };exports.searchMixin = searchMixin;
+    } }
+
+
+
+  // 点赞功能共享
+};exports.searchMixin = searchMixin;var likeMixin = {
+  computed: _objectSpread({},
+  (0, _vuex.mapGetters)([
+  'likeList'])),
+
+
+
+  methods: _objectSpread({
+    getLikeImg: function getLikeImg(item) {
+      if (this.isLikeItem(item)) {
+        return '/static/image/icon/love-active-icon.png';
+      } else {
+        return '/static/image/icon/love-icon.png';
+      }
+    },
+
+    toggleLikeState: function toggleLikeState(item) {
+      if (this.isLikeItem(item)) {
+        this.deleteLikeList(item);
+      } else {
+        this.saveLikeList(item);
+      }
+    },
+
+    isLikeItem: function isLikeItem(likeItem) {
+      var index = this.likeList.findIndex(function (item) {
+        return item.id === likeItem.id && item.type === likeItem.type;
+      });
+
+      return index > -1;
+    } },
+
+  (0, _vuex.mapActions)([
+  'saveLikeList',
+  'deleteLikeList'])) };exports.likeMixin = likeMixin;
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\common\\utils\\util.js":
-/*!********************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/common/utils/util.js ***!
-  \********************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js":
+/*!***************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/common/utils/util.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var http = function http(url, data, resolve) {
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 资源请求
+var http = function http(url, data, resolve) {
   uni.request({
     url: url,
     data: data,
@@ -8512,26 +8670,50 @@ var searchMixin = {
       uni.hideLoading();
     } });
 
+};
+
+// 判断对象是否相等
+var isObjectValueEqual = function isObjectValueEqual(obj1, obj2) {
+  var props1 = Object.keys(obj1);
+  var props2 = Object.keys(obj2);
+
+  if (props1.length !== props2.length) {
+    return false;
+  }
+
+  for (var i = 0; i < props1.length; i++) {
+    var propName = props1[i];
+
+    if (obj1[propName] !== obj2[propName]) {
+      return false;
+    }
+  }
+
+  return true;
 };var _default =
 
 {
-  http: http };exports.default = _default;
+  http: http,
+  isObjectValueEqual: isObjectValueEqual };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\main.js":
-/*!*******************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/main.js ***!
-  \*******************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js":
+/*!**************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "D:\\HbuilderX-Storage\\jiudao\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "D:\\HbuilderX-Storage\\jiudao\\App.vue"));
-var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "D:\\HbuilderX-Storage\\jiudao\\store\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "D:\\git-project\\miniprogress\\jiudao\\App.vue"));
+var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "D:\\git-project\\miniprogress\\jiudao\\store\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+// 将状态管理对象添加到 Vue 原型对象中
+_vue.default.prototype.$store = _store.default;
 
 _vue.default.config.productionTip = false;
 
@@ -8546,78 +8728,112 @@ createApp(app).$mount();
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\main.js?{\"page\":\"pages%2Fbook%2Fbook\"}":
-/*!**************************************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/main.js?{"page":"pages%2Fbook%2Fbook"} ***!
-  \**************************************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js?{\"page\":\"pages%2Fbook%2Fbook\"}":
+/*!*********************************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js?{"page":"pages%2Fbook%2Fbook"} ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\HbuilderX-Storage\\jiudao\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _book = _interopRequireDefault(__webpack_require__(/*! ./pages/book/book.vue */ "D:\\HbuilderX-Storage\\jiudao\\pages\\book\\book.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _book = _interopRequireDefault(__webpack_require__(/*! ./pages/book/book.vue */ "D:\\git-project\\miniprogress\\jiudao\\pages\\book\\book.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_book.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\main.js?{\"page\":\"pages%2Fbook-detail%2Fbook-detail\"}":
-/*!****************************************************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/main.js?{"page":"pages%2Fbook-detail%2Fbook-detail"} ***!
-  \****************************************************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js?{\"page\":\"pages%2Fbook-detail%2Fbook-detail\"}":
+/*!***********************************************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js?{"page":"pages%2Fbook-detail%2Fbook-detail"} ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\HbuilderX-Storage\\jiudao\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _bookDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/book-detail/book-detail.vue */ "D:\\HbuilderX-Storage\\jiudao\\pages\\book-detail\\book-detail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _bookDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/book-detail/book-detail.vue */ "D:\\git-project\\miniprogress\\jiudao\\pages\\book-detail\\book-detail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_bookDetail.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\main.js?{\"page\":\"pages%2Fclassic%2Fclassic\"}":
-/*!********************************************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/main.js?{"page":"pages%2Fclassic%2Fclassic"} ***!
-  \********************************************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js?{\"page\":\"pages%2Fclassic%2Fclassic\"}":
+/*!***************************************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js?{"page":"pages%2Fclassic%2Fclassic"} ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\HbuilderX-Storage\\jiudao\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _classic = _interopRequireDefault(__webpack_require__(/*! ./pages/classic/classic.vue */ "D:\\HbuilderX-Storage\\jiudao\\pages\\classic\\classic.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _classic = _interopRequireDefault(__webpack_require__(/*! ./pages/classic/classic.vue */ "D:\\git-project\\miniprogress\\jiudao\\pages\\classic\\classic.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_classic.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\main.js?{\"page\":\"pages%2Flike%2Flike\"}":
-/*!**************************************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/main.js?{"page":"pages%2Flike%2Flike"} ***!
-  \**************************************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js?{\"page\":\"pages%2Ffavorite-books%2Ffavorite-books\"}":
+/*!*****************************************************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js?{"page":"pages%2Ffavorite-books%2Ffavorite-books"} ***!
+  \*****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\HbuilderX-Storage\\jiudao\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _like = _interopRequireDefault(__webpack_require__(/*! ./pages/like/like.vue */ "D:\\HbuilderX-Storage\\jiudao\\pages\\like\\like.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _favoriteBooks = _interopRequireDefault(__webpack_require__(/*! ./pages/favorite-books/favorite-books.vue */ "D:\\git-project\\miniprogress\\jiudao\\pages\\favorite-books\\favorite-books.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_favoriteBooks.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js?{\"page\":\"pages%2Flike%2Flike\"}":
+/*!*********************************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js?{"page":"pages%2Flike%2Flike"} ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _like = _interopRequireDefault(__webpack_require__(/*! ./pages/like/like.vue */ "D:\\git-project\\miniprogress\\jiudao\\pages\\like\\like.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_like.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\pages.json":
-/*!**********************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/pages.json ***!
-  \**********************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\main.js?{\"page\":\"pages%2Flike-detail%2Flike-detail\"}":
+/*!***********************************************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/main.js?{"page":"pages%2Flike-detail%2Flike-detail"} ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "D:\\git-project\\miniprogress\\jiudao\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _likeDetail = _interopRequireDefault(__webpack_require__(/*! ./pages/like-detail/like-detail.vue */ "D:\\git-project\\miniprogress\\jiudao\\pages\\like-detail\\like-detail.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_likeDetail.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "D:\\git-project\\miniprogress\\jiudao\\pages.json":
+/*!*****************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/pages.json ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8626,51 +8842,76 @@ createPage(_like.default);
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\store\\actions.js":
-/*!****************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/store/actions.js ***!
-  \****************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\store\\actions.js":
+/*!***********************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/store/actions.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.foo = void 0;var types = _interopRequireWildcard(__webpack_require__(/*! ./mutation-types */ "D:\\HbuilderX-Storage\\jiudao\\store\\mutation-types.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}
+Object.defineProperty(exports, "__esModule", { value: true });exports.deleteLikeBookList = exports.saveLikeBookList = exports.deleteLikeList = exports.saveLikeList = exports.likeStar = void 0;var types = _interopRequireWildcard(__webpack_require__(/*! ./mutation-types */ "D:\\git-project\\miniprogress\\jiudao\\store\\mutation-types.js"));
+var _catch = __webpack_require__(/*! common/utils/catch */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\catch.js");function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}
 
 // 定义动作 -- 喜欢点赞
-var foo = function foo(_ref) {var commit = _ref.commit,state = _ref.state;
+var likeStar = function likeStar(_ref) {var commit = _ref.commit,state = _ref.state;
 
-};exports.foo = foo;
+} // commit(types.SET_STARNUMS)
+
+// 添加期刊到喜欢列表
+;exports.likeStar = likeStar;var saveLikeList = function saveLikeList(_ref2, item) {var commit = _ref2.commit;
+  commit(types.SET_LIKELIST, (0, _catch.saveLikeItem)(item));
+};
+
+// 将期刊从喜欢列表删除
+exports.saveLikeList = saveLikeList;var deleteLikeList = function deleteLikeList(_ref3, item) {var commit = _ref3.commit;
+  commit(types.SET_LIKELIST, (0, _catch.deleteLikeItem)(item));
+};
+
+// 添加书单到喜欢列表
+exports.deleteLikeList = deleteLikeList;var saveLikeBookList = function saveLikeBookList(_ref4, item) {var commit = _ref4.commit;
+  commit(types.SET_LIKEBOOK_LIST, (0, _catch.saveLikeBookItem)(item));
+};
+
+// 将书单从喜欢列表删除
+exports.saveLikeBookList = saveLikeBookList;var deleteLikeBookList = function deleteLikeBookList(_ref5, item) {var commit = _ref5.commit;
+  commit(types.SET_LIKEBOOK_LIST, (0, _catch.deleteLikeBookItem)(item));
+};exports.deleteLikeBookList = deleteLikeBookList;
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\store\\getters.js":
-/*!****************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/store/getters.js ***!
-  \****************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\store\\getters.js":
+/*!***********************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/store/getters.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.starNums = exports.likeList = void 0;var likeList = function likeList(state) {return state.likeList;};exports.likeList = likeList;
+Object.defineProperty(exports, "__esModule", { value: true });exports.currentPlayIndex = exports.playing = exports.likeBookList = exports.likeList = void 0;var likeList = function likeList(state) {return state.likeList;};exports.likeList = likeList;
 
-var starNums = function starNums(state) {return state.starNums;};exports.starNums = starNums;
+var likeBookList = function likeBookList(state) {return state.likeBookList;};exports.likeBookList = likeBookList;
+
+var playing = function playing(state) {return state.playing;};exports.playing = playing;
+
+var currentPlayIndex = function currentPlayIndex(state) {return state.currentPlayIndex;};exports.currentPlayIndex = currentPlayIndex;
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\store\\index.js":
-/*!**************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/store/index.js ***!
-  \**************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\store\\index.js":
+/*!*********************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/store/index.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"));
-var _state = _interopRequireDefault(__webpack_require__(/*! ./state */ "D:\\HbuilderX-Storage\\jiudao\\store\\state.js"));
-var _mutations = _interopRequireDefault(__webpack_require__(/*! ./mutations */ "D:\\HbuilderX-Storage\\jiudao\\store\\mutations.js"));
-var getters = _interopRequireWildcard(__webpack_require__(/*! ./getters */ "D:\\HbuilderX-Storage\\jiudao\\store\\getters.js"));
-var actions = _interopRequireWildcard(__webpack_require__(/*! ./actions */ "D:\\HbuilderX-Storage\\jiudao\\store\\actions.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _state = _interopRequireDefault(__webpack_require__(/*! ./state */ "D:\\git-project\\miniprogress\\jiudao\\store\\state.js"));
+var _mutations = _interopRequireDefault(__webpack_require__(/*! ./mutations */ "D:\\git-project\\miniprogress\\jiudao\\store\\mutations.js"));
+var getters = _interopRequireWildcard(__webpack_require__(/*! ./getters */ "D:\\git-project\\miniprogress\\jiudao\\store\\getters.js"));
+var actions = _interopRequireWildcard(__webpack_require__(/*! ./actions */ "D:\\git-project\\miniprogress\\jiudao\\store\\actions.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);var _default =
 
@@ -8682,36 +8923,46 @@ new _vuex.default.Store({
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\store\\mutation-types.js":
-/*!***********************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/store/mutation-types.js ***!
-  \***********************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\store\\mutation-types.js":
+/*!******************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/store/mutation-types.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.SET_STARNUMS = exports.SET_LIKELIST = void 0;var SET_LIKELIST = 'SET_LIKELIST';exports.SET_LIKELIST = SET_LIKELIST;
+Object.defineProperty(exports, "__esModule", { value: true });exports.SET_CURRENTPLAY_INDEX = exports.SET_PLAYING_STATE = exports.SET_LIKEBOOK_LIST = exports.SET_LIKELIST = void 0;var SET_LIKELIST = 'SET_LIKELIST';exports.SET_LIKELIST = SET_LIKELIST;
 
-var SET_STARNUMS = 'SET_STARNUMS';exports.SET_STARNUMS = SET_STARNUMS;
+var SET_LIKEBOOK_LIST = 'SET_LIKEBOOK_LIST';exports.SET_LIKEBOOK_LIST = SET_LIKEBOOK_LIST;
+
+var SET_PLAYING_STATE = 'SET_PLAYING_STATE';exports.SET_PLAYING_STATE = SET_PLAYING_STATE;
+
+var SET_CURRENTPLAY_INDEX = 'SET_CURRENTPLAY_INDEX';exports.SET_CURRENTPLAY_INDEX = SET_CURRENTPLAY_INDEX;
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\store\\mutations.js":
-/*!******************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/store/mutations.js ***!
-  \******************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\store\\mutations.js":
+/*!*************************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/store/mutations.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var types = _interopRequireWildcard(__webpack_require__(/*! ./mutation-types */ "D:\\HbuilderX-Storage\\jiudao\\store\\mutation-types.js"));var _mutations;function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var types = _interopRequireWildcard(__webpack_require__(/*! ./mutation-types */ "D:\\git-project\\miniprogress\\jiudao\\store\\mutation-types.js"));var _mutations;function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 var mutations = (_mutations = {}, _defineProperty(_mutations,
 types.SET_LIKELIST, function (state, likeList) {
   state.likeList = likeList;
 }), _defineProperty(_mutations,
-types.SET_STARNUMS, function (state, starNums) {
-  state.starNums = starNums;
+types.SET_LIKEBOOK_LIST, function (state, likeBookList) {
+  state.likeBookList = likeBookList;
+}), _defineProperty(_mutations,
+types.SET_PLAYING_STATE, function (state, flag) {
+  state.playing = flag;
+}), _defineProperty(_mutations,
+types.SET_CURRENTPLAY_INDEX, function (state, index) {
+  state.currentPlayIndex = index;
 }), _mutations);var _default =
 
 
@@ -8719,17 +8970,21 @@ mutations;exports.default = _default;
 
 /***/ }),
 
-/***/ "D:\\HbuilderX-Storage\\jiudao\\store\\state.js":
-/*!**************************************************!*\
-  !*** D:/HbuilderX-Storage/jiudao/store/state.js ***!
-  \**************************************************/
+/***/ "D:\\git-project\\miniprogress\\jiudao\\store\\state.js":
+/*!*********************************************************!*\
+  !*** D:/git-project/miniprogress/jiudao/store/state.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var state = {
-  likeList: [],
-  starNums: 0 };var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _catch = __webpack_require__(/*! common/utils/catch */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\catch.js");
+
+var state = {
+  likeList: (0, _catch.loadLikeList)(),
+  likeBookList: (0, _catch.loadLikeBookList)(),
+  playing: false,
+  currentPlayIndex: -1 };var _default =
 
 
 state;exports.default = _default;

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<classic-content :classic-content="result" :index="index"></classic-content>
+		<classic-content :classic-content="result" :index="index" :is-playing="isPlaying"></classic-content>
 		<view class="switch-btn">
 			<image :class="!isPrevEnd ? 'prev' : 'prev-end'" src="/static/image/icon/prev-icon.png" @click="onPrevTap"></image>
 			<text class="title">{{result.title}}</text>
@@ -13,6 +13,7 @@
 	import util from 'common/utils/util'
 	import ClassicContent from 'components/classic-content/classic-content'
 	import { getClassicData, getNextClassicData } from 'common/api/classic'
+	import { mapGetters, mapMutations } from 'vuex'
 	import { ERR_OK } from 'common/api/config'
 	
 	export default {
@@ -21,12 +22,29 @@
 				result: {},
 				index: 0,
 				isPrevEnd: false,
-				isNextEnd: false
+				isNextEnd: false,
+				isPlaying: false
 			}
+		},
+		
+		computed: {
+			...mapGetters([
+				'playing',
+				'currentPlayIndex'
+			])
 		},
 
 		onLoad() {
 			this._getClassicData()
+		},
+		
+		onShow() {
+			// 当音乐播放状态为播放时，且正在播放音乐索引和当前页面音乐索引相同时，显示播放状态，否则显示暂停状态
+			if (this.playing && this.index === this.currentPlayIndex) {
+				this.isPlaying = true
+			} else {
+				this.isPlaying = false
+			}
 		},
 		
 		methods: {
@@ -44,7 +62,6 @@
 					this.index += 1
 					this.isNextEnd = true
 				}
-				// console.log(this.index)
 				this._getNextClassicData(this.index)
 			},
 			
@@ -80,26 +97,12 @@
 					this.isPrevEnd = false
 					this.isNextEnd = false
 				}
-			}
-			/* onRequretHandler(result) {
-				if (result) {
-					// 初始化状态变量和模板数据
-					this.result = result
-					this.index = result.index
-
-					// 通过索引判断切换按钮状态
-					if (this.index === 8) {
-						this.isPrevEnd = true
-					} else if (this.index === 1) {
-						this.isNextEnd = true
-					} else {
-						this.isPrevEnd = false
-						this.isNextEnd = false
-					}
-				} else {
-					console.log('Callback Error')
-				}
-			} */
+			},
+			
+			...mapMutations({
+				setPlayingState: 'SET_PLAYING_STATE',
+				setCurrentPlayIndex: 'SET_CURRENTPLAY_INDEX'
+			})
 		},
 		
 		components: {
