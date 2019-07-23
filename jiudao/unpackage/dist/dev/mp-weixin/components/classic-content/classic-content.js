@@ -100,12 +100,14 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       if (this.playing) {
         backgroundAudioManager.pause();
         this.isPlayingIcon = false;
+        // this.startRotate = false
         this.setPlayingState(false);
       } else {// 初始化音乐播放
         // 为 backgroundAudioManager 对象添加属性
         Object.assign(backgroundAudioManager, config);
 
         this.isPlayingIcon = true;
+        // this.startRotate = true
         this.setPlayingState(true); // 更改音乐播放状态
         this.setCurrentPlayIndex(this.classicContent.index); // 记录当前播放音乐索引
       }

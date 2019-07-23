@@ -1,6 +1,6 @@
 <template>
 	<view class="book-item" @click="onBookTap" :data-bookId="bookItem.id">
-		<image class="book-img" :src="bookItem.image"></image>
+		<image class="book-img" :src="bookItem.image" lazy-load></image>
 		<view class="book-info">
 			<text class="book-name">{{bookItem.title}}</text>
 			<text class="book-author">{{bookItem.author}}</text>
@@ -40,7 +40,7 @@
 <style scoped>
 	.book-item {
 		position: relative;
-		margin-bottom: 60rpx;
+		margin-bottom: 50rpx;
 		width: 240rpx;
 		height: 360rpx;
 		border-radius: 6rpx;

@@ -9,7 +9,9 @@
 		{
 			"path": "pages/book/book",
 			"style": {
-				"navigationBarTitleText": "书单"
+				"navigationBarTitleText": "书单",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50
 			}
 		},
 		{

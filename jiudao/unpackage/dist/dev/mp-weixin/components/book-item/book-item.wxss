@@ -1,7 +1,7 @@
 
 .book-item.data-v-1dbbca7a {
 	position: relative;
-	margin-bottom: 60rpx;
+	margin-bottom: 50rpx;
 	width: 240rpx;
 	height: 360rpx;
 	border-radius: 6rpx;

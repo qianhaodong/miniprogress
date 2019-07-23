@@ -1,8 +1,11 @@
 {
   "navigationBarTitleText": "书单",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
   "usingComponents": {
     "book-list": "/components/book-list/book-list",
     "search-box": "/components/search-box/search-box",
-    "search-result": "/components/search-result/search-result"
+    "search-result": "/components/search-result/search-result",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
   }
 }

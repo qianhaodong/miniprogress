@@ -6,8 +6,12 @@
 			<view class="user-content">
 				<view class="user-bg"></view>
 				<view class="user-info">
-					<image class="user-avatar" src="/static/image/avatar.jpg"></image>
-					<text class="user-nickname"></text>
+					<!-- <image class="user-avatar" :src="userInfo.avatarUrl"></image> -->
+					<!-- <text class="user-nickname">{{userInfo.nickName}}</text> -->
+					<view class="user-avatar-box">
+						<open-data class="user-avatar" type="userAvatarUrl"></open-data>
+					</view>
+					<open-data class="user-nickname" type="userNickName"></open-data>
 				</view>
 				<view class="user-more">
 					<view class="about-me">
@@ -15,7 +19,7 @@
 						<text class="more-text">关于我们</text>
 					</view>
 					<view class="my-books" @click="onLikeBooks">
-						<text class="book-num">17</text>
+						<text class="book-num">{{likeBookList.length}}</text>
 						<text class="more-text">我的书单</text>
 					</view>
 				</view>
@@ -45,17 +49,21 @@
 	export default {
 		data() {
 			return {
-				
+				userInfo: {}
 			}
 		},
 
 		created() {
+			// this.userInfo = getApp().globalData.userInfo
+			// console.log(getApp().globalData.userInfo);
 			
+			// this.userInfo = this.$globalData.userInfo
 		},
 		
 		computed: {
 			...mapGetters([
-				'likeList'
+				'likeList',
+				'likeBookList'
 			])
 		},
 
@@ -142,12 +150,18 @@
 		flex-direction: column;
 		align-items: center;
 	}
-
-	.user-avatar {
+	
+	.user-avatar-box {
 		margin-bottom: 8rpx;
+		border-radius: 50%;
+		overflow: hidden;
 		height: 120rpx;
 		width: 120rpx;
-		border-radius: 50%;
+	}
+
+	.user-avatar {
+		height: 120rpx;
+		width: 120rpx;
 	}
 
 	.user-nickname {

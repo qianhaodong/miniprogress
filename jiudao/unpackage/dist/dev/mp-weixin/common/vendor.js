@@ -529,7 +529,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6732,7 +6732,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6753,14 +6753,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6836,7 +6836,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8314,14 +8314,9 @@ module.exports = g;
 var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 获取精选书籍
-function getHotBookList(params) {
+function getHotBookList() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var url = _config.BASE_URL + '/book/hot_list';
   var data = Object.assign(_config.commonParams, params);
-
-  uni.showLoading({
-    title: '加载中',
-    mask: false });
-
 
   return new Promise(function (resolve, reject) {
     _util.default.http(url, data, resolve);
@@ -8329,7 +8324,7 @@ function getHotBookList(params) {
 }
 
 // 获取书单详情
-function getBookDetail(params, bookid) {
+function getBookDetail(bookid) {var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var url = _config.BASE_URL + "/book/".concat(bookid, "/detail");
   var data = Object.assign(_config.commonParams, params);
 
@@ -8451,7 +8446,7 @@ function getLikeDetail(params, type, id) {
 var _util = _interopRequireDefault(__webpack_require__(/*! common/utils/util */ "D:\\git-project\\miniprogress\\jiudao\\common\\utils\\util.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 获取热搜关键字
-function getHotSearchKey(params) {
+function getHotSearchKey() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var url = _config.BASE_URL + '/book/hot_keyword';
   var data = Object.assign(_config.commonParams, params);
 
@@ -8466,14 +8461,9 @@ function getHotSearchKey(params) {
 }
 
 // 获取搜索列表
-function getSearchList(params) {
+function getSearchList() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var url = _config.BASE_URL + '/book/search';
   var data = Object.assign(_config.commonParams, params);
-
-  uni.showLoading({
-    title: '加载中',
-    mask: false });
-
 
   return new Promise(function (resolve, reject) {
     _util.default.http(url, data, resolve);
@@ -8668,6 +8658,7 @@ var http = function http(url, data, resolve) {
     },
     complete: function complete() {
       uni.hideLoading();
+      uni.stopPullDownRefresh();
     } });
 
 };
@@ -8712,9 +8703,25 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "D:\\git-project\\miniprogress\\jiudao\\App.vue"));
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "D:\\git-project\\miniprogress\\jiudao\\store\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
+/* function getUserInfo() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   	return new Promise((resolve, reject) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   		uni.getUserInfo({ // 不推荐使用
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   			success(res) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   				if (res.errMsg === 'getUserInfo:ok') {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   					resolve(res)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   				}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   			}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   		})
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   	})
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   getUserInfo().then(res => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   	// 添加数据到 Vue 全局对象中（设置全局数据的第二种方式）
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   	Vue.prototype.$globalData = { userInfo: res.userInfo }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }) */
+
 // 将状态管理对象添加到 Vue 原型对象中
 _vue.default.prototype.$store = _store.default;
-
 _vue.default.config.productionTip = false;
 
 _App.default.mpType = 'app';

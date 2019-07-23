@@ -109,6 +109,14 @@
 	border-radius: 50%;
 	-webkit-box-shadow: 0 0 20rpx 4rpx #ccc;
 	        box-shadow: 0 0 20rpx 4rpx #ccc;
+	-webkit-animation: musicRotate-data-v-4c74b088 12s infinite linear;
+	        animation: musicRotate-data-v-4c74b088 12s infinite linear;
+	-webkit-animation-play-state: paused;
+	        animation-play-state: paused;
+}
+.start-rotate.data-v-4c74b088 {
+	-webkit-animation-play-state: running;
+	        animation-play-state: running;
 }
 .btn-play.data-v-4c74b088 {
 	position: absolute;
@@ -166,5 +174,25 @@
 	font-size: 34rpx;
 	line-height: 50rpx;
 	letter-spacing: 2rpx;
+}
+@-webkit-keyframes musicRotate-data-v-4c74b088 {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
+}
+@keyframes musicRotate-data-v-4c74b088 {
+0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+}
+100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+}
 }
 

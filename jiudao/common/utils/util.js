@@ -8,6 +8,7 @@ const http = (url, data, resolve) => {
 		},
 		complete: () => {
 			uni.hideLoading()
+			uni.stopPullDownRefresh()
 		}
 	})
 }

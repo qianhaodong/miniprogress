@@ -21,7 +21,7 @@
 
 		<view class="classic-content">
 			<view v-if="musicShow" class="music-play">
-				<image class="music-img" :src="classicContent.image"></image>
+				<image class="music-img" :class="{ 'start-rotate': isPlayingIcon }" :src="classicContent.image"></image>
 				<view class="btn-play" @click="onMusicPlay">
 					<image :class="isPlayingIcon ? 'pause' : 'play'" :src="isPlayingIcon ? '/static/image/icon/pause-icon.png' : '/static/image/icon/play-icon.png'"></image>
 				</view>
@@ -90,12 +90,14 @@
 				if (this.playing) {
 					backgroundAudioManager.pause()
 					this.isPlayingIcon = false
+					// this.startRotate = false
 					this.setPlayingState(false)
 				} else { // 初始化音乐播放
 					// 为 backgroundAudioManager 对象添加属性
 					Object.assign(backgroundAudioManager, config)
 					
 					this.isPlayingIcon = true
+					// this.startRotate = true
 					this.setPlayingState(true) // 更改音乐播放状态
 					this.setCurrentPlayIndex(this.classicContent.index) // 记录当前播放音乐索引
 				}
@@ -260,6 +262,12 @@
 		height: 420rpx;
 		border-radius: 50%;
 		box-shadow: 0 0 20rpx 4rpx #ccc;
+		animation: musicRotate 12s infinite linear;
+		animation-play-state: paused;
+	}
+	
+	.start-rotate {
+		animation-play-state: running;
 	}
 
 	.btn-play {
@@ -304,5 +312,14 @@
 		font-size: 34rpx;
 		line-height: 50rpx;
 		letter-spacing: 2rpx;
+	}
+	
+	@keyframes musicRotate {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 </style>

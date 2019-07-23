@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "search-key": "/components/search-key/search-key",
-    "book-list": "/components/book-list/book-list"
+    "book-list": "/components/book-list/book-list",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
   },
   "component": true
 }

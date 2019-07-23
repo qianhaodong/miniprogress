@@ -22,14 +22,27 @@
 
 
 
-var _search = __webpack_require__(/*! common/api/search */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\search.js");
-var _config = __webpack_require__(/*! common/api/config */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js");var SearchKey = function SearchKey() {return __webpack_require__.e(/*! import() | components/search-key/search-key */ "components/search-key/search-key").then(__webpack_require__.bind(null, /*! components/search-key/search-key */ "D:\\git-project\\miniprogress\\jiudao\\components\\search-key\\search-key.vue"));};var BookList = function BookList() {return __webpack_require__.e(/*! import() | components/book-list/book-list */ "components/book-list/book-list").then(__webpack_require__.bind(null, /*! components/book-list/book-list */ "D:\\git-project\\miniprogress\\jiudao\\components\\book-list\\book-list.vue"));};var _default =
 
-{
+
+
+
+var _search = __webpack_require__(/*! common/api/search */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\search.js");
+var _config = __webpack_require__(/*! common/api/config */ "D:\\git-project\\miniprogress\\jiudao\\common\\api\\config.js");var SearchKey = function SearchKey() {return __webpack_require__.e(/*! import() | components/search-key/search-key */ "components/search-key/search-key").then(__webpack_require__.bind(null, /*! components/search-key/search-key */ "D:\\git-project\\miniprogress\\jiudao\\components\\search-key\\search-key.vue"));};var BookList = function BookList() {return __webpack_require__.e(/*! import() | components/book-list/book-list */ "components/book-list/book-list").then(__webpack_require__.bind(null, /*! components/book-list/book-list */ "D:\\git-project\\miniprogress\\jiudao\\components\\book-list\\book-list.vue"));};var UniLoadMore = function UniLoadMore() {return __webpack_require__.e(/*! import() | components/uni-load-more/uni-load-more */ "components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! components/uni-load-more/uni-load-more */ "D:\\git-project\\miniprogress\\jiudao\\components\\uni-load-more\\uni-load-more.vue"));};
+
+var count = 20; // 每页加载数量
+var _default = {
   props: {
     query: {
       type: String,
-      default: '' } },
+      default: '' },
+
+    pullDown: { // 下拉刷新标志
+      type: Boolean,
+      default: false },
+
+    pullUp: { // 上拉加载更多标志
+      type: Boolean,
+      default: false } },
 
 
 
@@ -37,8 +50,12 @@ var _config = __webpack_require__(/*! common/api/config */ "D:\\git-project\\min
     return {
       historyList: [],
       hotList: [],
-      searchList: [] };
-
+      searchList: [],
+      loadingType: 'loading', // 加载更多提示样式
+      loading: false, // 加载更多显示标志
+      hasMore: true, // 是否加载完标志
+      offset: 0 // 加载页码
+    };
   },
 
   created: function created() {
@@ -57,18 +74,34 @@ var _config = __webpack_require__(/*! common/api/config */ "D:\\git-project\\min
       this.$emit('query-selected', { query: query });
     },
 
-    _getHotSearchKey: function _getHotSearchKey() {var _this = this;var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      (0, _search.getHotSearchKey)(params).then(function (res) {
+    _getHotSearchKey: function _getHotSearchKey() {var _this = this;
+      (0, _search.getHotSearchKey)().then(function (res) {
         if (res.statusCode === _config.ERR_OK) {
           _this.hotList = res.data.hot;
         }
       });
     },
 
-    _getSearchList: function _getSearchList() {var _this2 = this;var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    _getSearchList: function _getSearchList(pullDown) {var _this2 = this;
+      this.offset = 0; // 初始化页码
+      var params = { // 搜索条件配置
+        summary: 1,
+        count: count,
+        start: count * this.offset,
+        q: this.query };
+
       (0, _search.getSearchList)(params).then(function (res) {
         if (res.statusCode === _config.ERR_OK) {
           _this2.searchList = res.data.books;
+
+          if (pullDown) {// 如果为下拉刷新，结束后提示
+            uni.showToast({
+              title: '刷新成功',
+              icon: 'success',
+              duration: 1000 });
+
+          }
+          _this2._checkMore(res.data);
         }
       });
       this._setHistorySearchKey(params.q);
@@ -101,26 +134,85 @@ var _config = __webpack_require__(/*! common/api/config */ "D:\\git-project\\min
 
         this.historyList = _historyList;
       }
+    },
+
+    _checkMore: function _checkMore(data) {// 上拉加载更多结束条件
+      if (data.books) {
+        var books = data.books;
+        var total = data.total; // 搜索结果数量
+        if (!books.length || (this.offset + 1) * count >= total) {
+          this.hasMore = false;
+        }
+      } else if (!data.total) {
+        this.hasMore = false;
+      }
     } },
 
 
   watch: {
     query: function query(_query) {// 当搜索框关键字改变时触发
       if (_query) {
-        var params = { // 搜索条件配置
-          summary: 1,
-          q: _query };
+        uni.showLoading({
+          title: '加载中',
+          mask: false });
 
-        this._getSearchList(params);
+
+        this._getSearchList();
       } else {// 当搜索框查询关键字为空时，清空搜索记录
         this.searchList = [];
+      }
+    },
+
+    pullDown: function pullDown(pullFlag) {
+      if (pullFlag) {
+        if (this.searchList.length) {
+          var pullDown = true;
+          this._getSearchList(pullDown);
+        } else {
+          this._getHotSearchKey();
+        }
+
+        // 当下拉刷新结束，派发一个下拉完成事件
+        this.$emit('pull-done');
+      }
+    },
+
+    pullUp: function pullUp(pullFlag) {var _this3 = this;
+      if (pullFlag) {
+        if (this.searchList.length) {
+          if (!this.hasMore) {
+            this.loadingType = 'noMore';
+            return;
+          }
+
+          this.offset++;
+          this.loading = true;
+          var params = { // 搜索条件配置
+            summary: 1,
+            count: count,
+            start: count * this.offset,
+            q: this.query };
+
+          (0, _search.getSearchList)(params).then(function (res) {
+            if (res.statusCode === _config.ERR_OK) {
+              _this3.searchList = _this3.searchList.concat(res.data.books);
+
+              _this3._checkMore(res.data);
+              // 当下拉刷新结束，派发一个下拉完成事件
+              _this3.$emit('pull-done');
+            }
+          });
+        } else {
+          console.log('什么也不做~');
+        }
       }
     } },
 
 
   components: {
     SearchKey: SearchKey,
-    BookList: BookList } };exports.default = _default;
+    BookList: BookList,
+    UniLoadMore: UniLoadMore } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),

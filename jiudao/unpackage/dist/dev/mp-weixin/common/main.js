@@ -10,12 +10,31 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 {
+  /* globalData: { // 设置全局数据的第一种方式
+  	userInfo: {}
+  }, */
+
   onLaunch: function onLaunch() {
-    // console.log('App Launch')
+    /* const that = this
+                                 uni.getUserInfo({
+                                 	success(res) {
+                                 		that.$options.globalData.userInfo = res.userInfo
+                                 	}
+                                 }) */
+
+    /* uni.login({
+                                       	success: res => {
+                                       		console.log(res);
+                                       	},
+                                       	fail: () => {},
+                                       	complete: () => {}
+                                       }); */
   },
+
   onShow: function onShow() {
     // console.log('App Show')
   },
+
   onHide: function onHide() {
     // console.log('App Hide')
   } };exports.default = _default;

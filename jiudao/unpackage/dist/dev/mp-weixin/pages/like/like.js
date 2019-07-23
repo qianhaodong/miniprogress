@@ -50,22 +50,30 @@
 
 
 
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var LikeItem = function LikeItem() {return __webpack_require__.e(/*! import() | components/like-item/like-item */ "components/like-item/like-item").then(__webpack_require__.bind(null, /*! components/like-item/like-item */ "D:\\git-project\\miniprogress\\jiudao\\components\\like-item\\like-item.vue"));};var _default =
 
 {
   data: function data() {
-    return {};
-
+    return {
+      userInfo: {} };
 
   },
 
   created: function created() {
+    // this.userInfo = getApp().globalData.userInfo
+    // console.log(getApp().globalData.userInfo);
 
+    // this.userInfo = this.$globalData.userInfo
   },
 
   computed: _objectSpread({},
   (0, _vuex.mapGetters)([
-  'likeList'])),
+  'likeList',
+  'likeBookList'])),
 
 
 

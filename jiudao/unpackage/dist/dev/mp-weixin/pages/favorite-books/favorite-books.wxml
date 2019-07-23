@@ -1,1 +1,1 @@
-<view><book-list vue-id="1" book-list="{{likeBookList}}" bind:__l="__l" vue-slots="{{['default']}}">喜欢书单</book-list></view>
+<view><block wx:if="{{likeBookList.length}}"><book-list vue-id="1" book-list="{{likeBookList}}" bind:__l="__l" vue-slots="{{['default']}}">喜欢书单</book-list></block><block wx:else><view class="tips"><text>暂时没有喜欢的内容~</text></view></block></view>
