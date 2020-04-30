@@ -1,8 +1,15 @@
 Component({
   properties: {
+    // 初始时间
     initDate: {
       type: String,
       value: ''
+    },
+
+    // 初始年份
+    year: {
+      type: Number,
+      value: 2019
     }
   },
 
@@ -25,20 +32,21 @@ Component({
       day: 0
     },
     value: [],
-    pickerToggle: true, // 按月 / 按日切换标志（true 为按月，false 为按日）
+    pickerToggle: false, // 按月 / 按日切换标志（true 为按月，false 为按日）
     pickerDateShow: false, // 日期选择器显示标志
     pickerMonth: false, // 按月处理日期显示标志
     pickerStartDay: false, // 开始日期显示标志
     pickerEndDay: false, // 结束日期显示标志
     pickerStartActive: false, // 开始日期选中标志
     pickerEndActive: false, // 结束日期选中标志
-    confirmState: false, // 日期选择完成标志
+    confirmState: false, // 日期选择完成标志（防止滚动选择器未结束时点击完成按钮，导致日期选择有误）
   },
 
   lifetimes: {
     attached() {
       // 初始化状态
       this.setData({
+        pickerToggle: true,
         pickerDateShow: true,
         pickerMonth: true,
         pickerStartDay: true,
@@ -55,7 +63,7 @@ Component({
     // picker 滚动选择事件
     pickerChange(e) {
       const val = e.detail.value
-      let startDate = {}
+      // let startDate = {}
       let year, month, day
       const {
         pickerToggle,
@@ -83,7 +91,7 @@ Component({
           }
         })
       } else { // 按日
-
+        
         // 结束日期
         if (pickerEndActive) {
           this.setData({
@@ -171,7 +179,7 @@ Component({
     },
 
     // 删除所选日期
-    pickerDelete() {
+    pickerDeleteTap() {
       const pickerToggle = this.data.pickerToggle
 
       if (pickerToggle) { // 按月选择
@@ -206,7 +214,8 @@ Component({
       })
     },
 
-    confirm() { // 确认
+    // 确认
+    confirm() {
       let date = {}
       const {
         pickerToggle,
@@ -268,28 +277,9 @@ Component({
       this.triggerEvent('picker-date-done', {type: 'confirm', date})
     },
 
-    cancel() { // 取消
+    // 取消
+    cancel() {
       this.triggerEvent('picker-date-done', {type: 'cancel'})
-    },
-
-    // 获取当前日期
-    _getCurrentDate() {
-      const date = new Date()
-      let year, month, day
-
-      // 获取当前日期
-      year = date.getFullYear()
-      month = date.getMonth() + 1
-      day = date.getDate()
-
-      month = month < 10 ? `0${month}` : month
-      day = day < 10 ? `0${day}` : day
-
-      return {
-        year,
-        month,
-        day
-      }
     },
 
     // 初始化时间格式
@@ -302,7 +292,7 @@ Component({
       const currentDate = this._getCurrentDate()
 
       // 初始化时间范围
-      for (let i = 2019; i <= date.getFullYear(); i++) {
+      for (let i = this.data.year; i <= date.getFullYear(); i++) {
         years.push(i)
       }
 
@@ -317,9 +307,10 @@ Component({
       const dateArr = initDate.split(',')
       const tempArr1 = dateArr[0].split('-')
       const tempArr2 = dateArr[1].split('-')
-      let year, month, day, monthDate, startDate, endDate
+      let monthDate, startDate, endDate
       let pickerToggle = false
       let pickerEndDay = false
+
       if (dateArr[0] === dateArr[1]) {
         monthDate = startDate = endDate = currentDate
         if (tempArr1.length === 2) {
@@ -367,6 +358,26 @@ Component({
         pickerToggle,
         pickerEndDay
       })
+    },
+
+    // 获取当前日期
+    _getCurrentDate() {
+      const date = new Date()
+      let year, month, day
+
+      // 获取当前日期
+      year = date.getFullYear()
+      month = date.getMonth() + 1
+      day = date.getDate()
+
+      month = month < 10 ? `0${month}` : month
+      day = day < 10 ? `0${day}` : day
+
+      return {
+        year,
+        month,
+        day
+      }
     },
 
     // 处理 picker 时间选择器

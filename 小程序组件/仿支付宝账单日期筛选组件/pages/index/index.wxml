@@ -1,9 +1,16 @@
-<button class="demo" catch:tap="show">组件演示</button>
+<view class="title">仿支付宝账单日期筛选组件</view>
+
+<view class="picker-box">
+  <view class="picker-date" catch:tap="pickerSelectedTap">
+    <text wx:if="{{pickerDate[0] === pickerDate[1]}}">{{pickerDate[0]}}</text>
+    <text wx:else>{{pickerDate[0]}}\n{{pickerDate[1]}}</text>
+  </view>
+</view>
 
 <!-- 日期选择组件 -->
 <picker-date
   wx:if="{{pickerDateShow}}"
-  class="picker-pop"
+  year="{{2018}}"
   init-date="{{date}}"
   catch:picker-date-done="pickerDateDone"
 ></picker-date>

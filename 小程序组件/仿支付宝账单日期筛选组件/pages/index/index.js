@@ -7,7 +7,7 @@ Page({
     this._initData()
   },
 
-  show() {
+  pickerSelectedTap() {
     this.setData({
       pickerDateShow: true
     })
@@ -15,27 +15,15 @@ Page({
 
   // 日期选择完成事件
   pickerDateDone(e) {
+    console.log('result: ', e.detail)
+
     // 完成日期选择时执行
     if (e.detail.type === 'confirm') {
       const date = e.detail.date.content
-
-      // 初始化 按月 / 按日 请求参数
-      let monORday = 0
-      if (e.detail.date.type === 'month') { // 按月
-        monORday = 0
-      } else if (e.detail.date.type === 'day') { // 按日
-        monORday = 1
-      }
-
       this.setData({
         date,
-        monORday,
-        pickerDate: date.split(','),
-        page: 1,
-        orderList: []
+        pickerDate: date.split(',')
       })
-
-      this._getTakeawayOrderList()
     }
 
     this.setData({
@@ -51,7 +39,7 @@ Page({
 
     this.setData({
       date,
-      pickerDate: date.split(','),
+      pickerDate: date.split(',')
     })
   },
 
@@ -65,6 +53,7 @@ Page({
     month = date.getMonth() + 1
     day = date.getDate()
 
+    // 处理日期格式
     month = month < 10 ? `0${month}` : month
     day = day < 10 ? `0${day}` : day
 
