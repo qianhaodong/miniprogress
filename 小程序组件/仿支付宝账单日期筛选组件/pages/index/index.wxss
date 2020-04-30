@@ -1,0 +1,13 @@
+.demo {
+  margin: 100rpx auto 0;
+}
+
+.picker-pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: #fff;
+}

@@ -1,0 +1,9 @@
+<button class="demo" catch:tap="show">组件演示</button>
+
+<!-- 日期选择组件 -->
+<picker-date
+  wx:if="{{pickerDateShow}}"
+  class="picker-pop"
+  init-date="{{date}}"
+  catch:picker-date-done="pickerDateDone"
+></picker-date>

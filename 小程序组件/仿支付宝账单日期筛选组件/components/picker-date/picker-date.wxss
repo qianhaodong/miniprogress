@@ -1,0 +1,113 @@
+.picker-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 24rpx 0;
+}
+
+.picker-select {
+  display: flex;
+  align-items: center;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  padding: 0 24rpx;
+  border-radius: 40rpx;
+  border: 1rpx solid #ddd;
+  color: #666;
+  background-color: #f5f5f5;
+}
+
+.picker-select-icon {
+  margin-left: 10rpx;
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.picker-btns {
+  display: flex;
+}
+
+.picker-confirm {
+  color: #3b9cff;
+  font-size: 30rpx;
+  line-height: 72rpx;
+  padding: 0 12rpx;
+}
+
+.picker-cancel {
+  color: #999;
+  font-size: 30rpx;
+  line-height: 72rpx;
+  padding: 0 12rpx;
+  margin-left: 14rpx;
+}
+
+.picker-date {
+  margin: 40rpx 20rpx 0;
+  text-align: center;
+  line-height: 80rpx;
+  color: #999;
+}
+
+.picker-month {
+  border-bottom: 1rpx solid #ddd;
+}
+
+.picker-day {
+  display: flex;
+}
+
+.picker-day view {
+  flex: 1;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.picker-day view:first-child {
+  margin-right: 20rpx;
+}
+
+.picker-day view:last-child {
+  margin-left: 20rpx;
+}
+
+.picker-date .picker-date-active {
+  color: #3b9cff;
+  border-bottom: 1rpx solid #3b9cff;
+}
+
+.picker-delete {
+  width: 90rpx;
+  height: 90rpx;
+  padding-right: 24rpx;
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.picker-delete image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.picker-wrap {
+  padding: 40rpx 0;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.picker-content {
+  height: 270rpx;
+  text-align: center;
+  padding: 0 120rpx;
+}
+
+.picker-items {
+  height: 90rpx;
+}
+
+.picker-item {
+  line-height: 90rpx;
+  text-align: center;
+  margin: 0 24rpx;
+}

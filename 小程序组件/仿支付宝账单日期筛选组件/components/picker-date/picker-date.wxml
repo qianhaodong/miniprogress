@@ -1,0 +1,66 @@
+<view>
+  <view class="picker-top">
+    <view class="picker-select" catch:tap="pickerSelect">
+      <text class="picker-select-txt">{{pickerToggle ? '按月选择' : '按日选择'}}</text>
+      <image class="picker-select-icon" src="/images/picker-toggle.png"></image>
+      <!-- <image class="picker-select-icon" src=""></image> -->
+    </view>
+    <view class="picker-btns">
+      <view class="picker-confirm" catch:tap="confirm">完成</view>
+      <view class="picker-cancel" catch:tap="cancel">取消</view>
+    </view>
+  </view>
+  <view class="picker-date">
+    <view catch:tap="pickerMonthSelect" class="picker-month {{pickerMonth ? 'picker-date-active' : ''}}" wx:if="{{pickerToggle}}">
+      <block wx:if="{{pickerMonth}}">
+        {{monthDate.year}}-{{monthDate.month}}
+      </block>
+      <block wx:else>
+        选择月份
+      </block>
+    </view>
+    <view class="picker-day" wx:else>
+      <view class="{{pickerStartActive ? 'picker-date-active' : ''}}" data-id="1" catch:tap="pickerDayToggle">
+        <block wx:if="{{pickerStartDay}}">
+          {{startDate.year}}-{{startDate.month}}-{{startDate.day}}
+        </block>
+        <block wx:else>
+          开始日期
+        </block>
+      </view>
+      至
+      <view class="{{pickerEndActive ? 'picker-date-active' : ''}}" data-id="2" catch:tap="pickerDayToggle">
+        <block wx:if="{{pickerEndDay}}">
+          {{endDate.year}}-{{endDate.month}}-{{endDate.day}}
+        </block>
+        <block wx:else>
+          结束日期
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="picker-delete" catch:tap="pickerDelete">
+    <image src="/images/picker-delete.png"></image>
+  </view>
+  <view class="picker-wrap" wx:if="{{pickerDateShow}}">
+    <picker-view
+      wx:if="{{value.length}}"
+      class="picker-content"
+      indicator-class="picker-items"
+      value="{{value}}"
+      bindchange="pickerChange"
+      bindpickstart="pickerStart"
+      bindpickend="pickerEnd"
+    >
+      <picker-view-column class="picker-item">
+        <view wx:for="{{years}}" wx:key="index">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column class="picker-item">
+        <view wx:for="{{months}}" wx:key="index">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column class="picker-item" wx:if="{{!pickerToggle}}">
+        <view wx:for="{{days}}" wx:key="index">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
