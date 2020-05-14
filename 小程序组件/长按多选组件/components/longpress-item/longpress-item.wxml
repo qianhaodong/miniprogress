@@ -1,0 +1,14 @@
+<view
+  class="item my-class"
+  bind:longpress="longpressHandler"
+  catch:tap="selectedTap"
+>
+  <!-- 多选按钮 -->
+  <view class="item-switch" wx:if="{{radioShow}}">
+    <view class="item-circle" wx:if="{{!checked}}"></view>
+    <image class="item-success" src="/images/success.png" wx:else></image>
+  </view>
+  <view class="item-slot">
+    <slot name="longpress-item"></slot>
+  </view>
+</view>

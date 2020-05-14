@@ -1,0 +1,84 @@
+/* 底部操作样式 -- start */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 0 24rpx;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.operate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 110rpx;
+}
+
+.operate-all {
+  display: flex;
+  padding: 20rpx 0 20rpx 10rpx;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666;
+  line-height: 48rpx;
+}
+
+.operate-switch {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 12rpx;
+}
+
+.operate-circle {
+  width: 36rpx;
+  height: 36rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 50%;
+}
+
+.operate-success {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+.operate-info {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.operate-confirm {
+  margin-left: 30rpx;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  padding: 0 40rpx;
+  border-radius: 100rpx;
+  background-color: #3b9cff;
+  box-shadow: 0 4rpx 12rpx 0 #3b9cff;
+  color: #fff;
+}
+
+.operate-confirm.cancel {
+  background-color: #fff;
+  border: 1rpx solid #ddd;
+  box-shadow: 0 4rpx 12rpx 0 #eee;
+  line-height: 54rpx;
+  color: #333;
+}
+
+.operate-confirm:active {
+  transform: translate(1rpx, 1rpx);
+}
+
+.operate-confirm::after {
+  border: none;
+}
+
+/* 底部操作样式 -- end */

@@ -1,0 +1,23 @@
+page {
+  background-color: #f5f5f5;
+}
+
+.title {
+  padding: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+}
+
+.longpress-list {
+  padding-bottom: 120rpx;
+}
+
+.longpress-item {
+  background-color: #fff;
+  border-bottom: 2rpx solid #eeeff0;
+}
+
+.item {
+  line-height: 96rpx;
+}

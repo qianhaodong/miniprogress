@@ -1,0 +1,26 @@
+<view class="list {{radioShow ? 'my-class' : ''}}">
+  <slot></slot>
+</view>
+
+<!-- 底部操作 -->
+<view class="footer" wx:if="{{radioShow}}">
+  <view class="operate">
+    <view class="operate-all" catch:tap="selectAllTap">
+      <view class="operate-switch">
+        <view class="operate-circle" wx:if="{{!checkAllFlag}}"></view>
+        <image class="operate-success" src="/images/success.png" wx:else></image>
+      </view>
+      <text>全选</text>
+    </view>
+    <view class="operate-info">
+      <button class="operate-confirm cancel" catch:tap="cancel">取消</button>
+      <button class="operate-confirm" catch:tap="confirm">删除<block wx:if="{{multipleNumber}}"> ({{multipleNumber}})</block></button>
+    </view>
+  </view>
+</view>
+
+<!-- 长按弹窗 -->
+<longpress-pop
+  model:longpress-pop-show-flag="{{longpressPopShowFlag}}"
+  catch:longpress-event-done="longpressEventDone"
+></longpress-pop>

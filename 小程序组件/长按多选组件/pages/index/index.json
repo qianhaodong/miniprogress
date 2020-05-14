@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "longpress-list": "/components/longpress-list/longpress-list",
+    "longpress-item": "/components/longpress-item/longpress-item"
+  }
+}

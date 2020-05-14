@@ -1,0 +1,14 @@
+<block wx:if="{{longpressPopShowFlag}}">
+  <view class="long-press-mask {{animateMask}}" catch:tap="longpressPopHide"></view>
+  <view class="long-press-pop {{animatePop}}">
+    <block wx:for="{{longpressList}}" wx:key="index">
+      <view
+        class="item"
+        catch:tap="longpressItemTap"
+        data-index="{{index}}"
+        style="{{item.color ? 'color: ' + item.color : ''}}"
+      >{{item.txt}}</view>
+    </block>
+    <view class="item" catch:tap="longpressPopHide">取消</view>
+  </view>
+</block>

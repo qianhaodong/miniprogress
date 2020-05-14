@@ -1,0 +1,25 @@
+<view class="title">长按可以多选删除</view>
+
+<longpress-list
+  my-class="longpress-list"
+  model:longpress-pop-show-flag="{{longpressPopShowFlag}}"
+  check-all-flag="{{checkAllFlag}}"
+  multiple-number="{{multipleNumber}}"
+  model:radio-show="{{radioShow}}"
+  catch:select-all-tap="selectAllTap"
+  catch:handle-delete="handleDelete"
+>
+  <block wx:for="{{list}}" wx:key="index">
+    <longpress-item
+      my-class="longpress-item"
+      checked="{{item.checked}}"
+      radio-show="{{radioShow}}"
+      catch:longpress-pop-show="longpressPopShow"
+      catch:handle-selected-tap="handleSelectedTap"
+      data-id="{{item.id}}"
+      data-index="{{index}}"
+    >
+      <view slot="longpress-item" class="item">{{item.txt}}</view>
+    </longpress-item>
+  </block>
+</longpress-list>
