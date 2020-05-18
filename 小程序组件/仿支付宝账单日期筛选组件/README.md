@@ -30,6 +30,6 @@
 
 3. 示例截图
 
-![demo1](https://raw.githubusercontent.com/qianhaodong/miniprogress/master/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6/%E4%BB%BF%E6%94%AF%E4%BB%98%E5%AE%9D%E8%B4%A6%E5%8D%95%E6%97%A5%E6%9C%9F%E7%AD%9B%E9%80%89%E7%BB%84%E4%BB%B6/images/demo1.png "Demo1")
-![demo2](https://raw.githubusercontent.com/qianhaodong/miniprogress/master/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6/%E4%BB%BF%E6%94%AF%E4%BB%98%E5%AE%9D%E8%B4%A6%E5%8D%95%E6%97%A5%E6%9C%9F%E7%AD%9B%E9%80%89%E7%BB%84%E4%BB%B6/images/demo2.png "demo2")
-![demo3](https://raw.githubusercontent.com/qianhaodong/miniprogress/master/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6/%E4%BB%BF%E6%94%AF%E4%BB%98%E5%AE%9D%E8%B4%A6%E5%8D%95%E6%97%A5%E6%9C%9F%E7%AD%9B%E9%80%89%E7%BB%84%E4%BB%B6/images/demo3.png "demo3")
+![demo1](https://v2.qianhaodong.com/qianhaodong/miniprogress/master/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6/%E4%BB%BF%E6%94%AF%E4%BB%98%E5%AE%9D%E8%B4%A6%E5%8D%95%E6%97%A5%E6%9C%9F%E7%AD%9B%E9%80%89%E7%BB%84%E4%BB%B6/images/demo1.png "Demo1")
+![demo2](https://v2.qianhaodong.com/qianhaodong/miniprogress/master/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6/%E4%BB%BF%E6%94%AF%E4%BB%98%E5%AE%9D%E8%B4%A6%E5%8D%95%E6%97%A5%E6%9C%9F%E7%AD%9B%E9%80%89%E7%BB%84%E4%BB%B6/images/demo2.png "demo2")
+![demo3](https://v2.qianhaodong.com/qianhaodong/miniprogress/master/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6/%E4%BB%BF%E6%94%AF%E4%BB%98%E5%AE%9D%E8%B4%A6%E5%8D%95%E6%97%A5%E6%9C%9F%E7%AD%9B%E9%80%89%E7%BB%84%E4%BB%B6/images/demo3.png "demo3")
