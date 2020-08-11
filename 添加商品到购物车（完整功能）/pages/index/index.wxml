@@ -1,0 +1,109 @@
+<!-- 点菜商品  --> 
+<view class="commodity">
+	<block wx:if="{{categroyMenu.length}}">
+		<view class="categroy-menu">
+      <scroll-view
+        class="scroll-view"
+        scroll-y
+        scroll-with-animation
+        scroll-top="{{navScrollTop}}"
+      >
+        <block wx:for="{{categroyMenu}}" wx:key="index">
+          <view class="menu-item {{categroyMenuIndex === index ? 'active' : ''}}" catch:tap="categroyMenuTap" data-index="{{index}}">
+            <view>{{item.ft_name}}</view>
+          </view>
+        </block>
+      </scroll-view>
+		</view>
+		<view class="categroy-content" wx:if="{{goodsList.length}}">
+      <scroll-view
+        class="scroll-view"
+        scroll-y
+        scroll-with-animation
+        scroll-into-view="{{'main-' + contentIndex}}"
+        bindscroll="onMainScroll"
+      >
+        <view
+          wx:for="{{goodsList}}"
+          wx:for-item="goodItem"
+          wx:for-index="goodIndex"
+          wx:key="goodIndex"
+          id="{{'main-' + goodIndex}}"
+        >
+          <view class="categroy-name">{{goodItem.ft_name}}</view>
+          <view class="content-list">
+            <block
+              wx:for="{{goodItem.foodsList}}"
+              wx:for-item="foodItem"
+              wx:for-index="foodIndex"
+              wx:key="foodIndex"
+            >
+              <view class="content-item" catch:tap="navToGoodsDetail" data-food-item="{{foodItem}}">
+                <view class="item-info-left">
+                  <image src="{{foodItem.f_logo}}" mode="aspectFill" lazy-load></image>
+                </view>
+                <view class="item-info-right">
+                  <text class="name">{{foodItem.f_name}}</text>
+                  <text class="desc">{{foodItem.f_desc}}</text>
+                  <text class="num">月售{{foodItem.salesVolumeInMonth}}</text>
+                  <view class="add-cart">
+                    <view class="price">￥<text>{{foodItem.localPrice}}</text></view>
+                    <view class="operate">
+                      <block wx:if="{{!foodItem.chooseSpecsFlag}}">
+                        <!-- 商品数量操作组件 -->
+                        <number-QR
+                          quantity="{{foodItem.attrIndex[foodItem.attrIndex.length - 1]}}"
+                          catch:set-quantity="setQuantity"
+                          catch:add-animate="handleAddAnimate"
+                          data-categroy-index="{{goodIndex}}"
+                          data-food-index="{{foodIndex}}"
+                          data-type="add"
+                        ></number-QR>
+                      </block>
+                      <view
+                        wx:else
+                        class="choose-specs-btn"
+                        catch:tap="chooseSpecsTap"
+                        data-categroy-index="{{goodIndex}}"
+                        data-food-index="{{foodIndex}}"
+                      >
+                        <text>选规格</text>
+                        <view class="top-number {{foodItem.localQuantity > 99 ? 'big' : ''}}" wx:if="{{foodItem.localQuantity}}">{{foodItem.localQuantity}}</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+		</view>
+	</block>
+	<block wx:if="{{noResult}}">
+		<view class="empty">
+			<image src="/common/images/empty-logo.png"></image>
+			<view class="empty-tips">该商家没有商品</view>
+		</view>
+	</block>
+</view>
+
+<!-- 购物车 -->
+<cart
+  id="cart"
+  diff-price="{{diffPrice}}"
+  cart-list="{{localCartList}}"
+  data-type="cart"
+  catch:set-quantity="setQuantity"
+  catch:clear-cart-tap="clearCartTap"
+></cart>
+
+<!-- 规格弹窗 -->
+<spec-pop
+  goods-item="{{currentGoodsItem}}"
+  cart-list="{{localCartList}}"
+  model:visible="{{visible}}"
+  catch:set-quantity="setQuantity"
+  catch:handle-add-animate="handleAddAnimate"
+  data-type="spec"
+></spec-pop>

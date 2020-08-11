@@ -1,0 +1,5 @@
+<view class="number">
+  <image class="icon reduce-icon {{ localQuantity !== 0 ? 'reduce-icon-show' : ''}}" src="/common/images/reduce-cart-icon.png" catch:tap="changeQty" data-is-add="{{false}}"></image>
+  <text class="number-txt {{ localQuantity !== 0 ? 'number-txt-show' : ''}}">{{localQuantity}}</text>
+	<image class="icon" src="/common/images/add-cart-icon.png" catch:tap="changeQty" data-is-add="{{true}}"></image>
+</view>

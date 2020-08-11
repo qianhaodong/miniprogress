@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "number-QR": "/components/number/number",
+    "cart": "/components/cart/cart",
+    "spec-pop": "/components/spec-pop/index"
+  }
+}

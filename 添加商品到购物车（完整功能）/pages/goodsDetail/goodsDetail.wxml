@@ -1,0 +1,56 @@
+<block wx:if="{{currentGoodsItem}}">
+  <image class="goodsImg" mode="scaleToFill" src="{{currentGoodsItem.f_image}}"></image>
+  <view class="goodsName">
+    <view class="name w_95">{{currentGoodsItem.f_name}}</view>
+    <view class="number w_95">月售{{currentGoodsItem.salesVolumeInMonth}}</view>
+    <view class="priceBox w_95">
+      <view class="price">￥<text>{{currentGoodsItem.localPrice}}</text></view>
+      <view class="operate">
+        <block wx:if="{{!currentGoodsItem.chooseSpecsFlag}}">
+          <!-- 商品数量操作组件 -->
+					<number-QR
+            quantity="{{currentGoodsItem.attrIndex[currentGoodsItem.attrIndex.length - 1]}}"
+            catch:set-quantity="setQuantity"
+            catch:add-animate="handleAddAnimate"
+            data-item="{{currentGoodsItem}}"
+            data-type="add"
+          ></number-QR>
+        </block>
+				<view
+          wx:else
+          class="choose-specs-btn"
+          catch:tap="chooseSpecsTap"
+          data-item="{{currentGoodsItem}}"
+        >
+					<text>选规格</text>
+					<view class="top-number {{currentGoodsItem.localQuantity > 99 ? 'big' : ''}}" wx:if="{{currentGoodsItem.localQuantity}}">{{currentGoodsItem.localQuantity}}</view>
+				</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="goodDes">
+    <view>商品描述</view>
+    <view class="des">{{currentGoodsItem.f_desc}}</view>
+  </view>
+</block>
+
+<!-- 购物车 -->
+<cart
+  id="cart"
+  diff-price="{{diffPrice}}"
+  cart-list="{{localCartList}}"
+  data-type="cart"
+  catch:set-quantity="setQuantity"
+  catch:clear-cart-tap="clearCartTap"
+></cart>
+
+<!-- 规格弹窗 -->
+<spec-pop
+  goods-item="{{currentGoodsItem}}"
+  cart-list="{{localCartList}}"
+  model:visible="{{visible}}"
+  catch:set-quantity="setQuantity"
+  catch:handle-add-animate="handleAddAnimate"
+  data-type="spec"
+></spec-pop>

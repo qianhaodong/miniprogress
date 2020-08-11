@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "cart": "/components/cart/cart",
+    "number-QR": "/components/number/number",
+    "spec-pop": "/components/spec-pop/index"
+  }
+}
