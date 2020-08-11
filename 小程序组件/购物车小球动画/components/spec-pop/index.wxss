@@ -1,0 +1,161 @@
+/* 规格弹窗 - start */
+
+.pop-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pop-mask-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.specs-pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate3d(-50%, -50%, 1px);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  z-index: 110;
+}
+
+.specs-pop-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pop-content {
+  margin-bottom: 50rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  width: 100%;
+  padding: 30rpx 0;
+  font-size: 26rpx;
+}
+
+.pop-content .specs-list {
+  padding: 0 30rpx;
+  max-height: 540rpx;
+  overflow-y: auto;
+}
+
+.pop-content .pop-title {
+  padding: 0 30rpx;
+  margin-bottom: 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.pop-content .specs {
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.specs .attrs-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.specs .spec-txt {
+  color: #999;
+}
+
+.specs .specs-item {
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  padding: 0 32rpx;
+  line-height: 48rpx;
+  border: 1rpx solid #e2e2e2;
+  border-radius: 8rpx;
+  color: #000;
+}
+
+.specs.spec .specs-item {
+  padding: 0 24rpx;
+}
+
+.specs .specs-item.active {
+  border-color: #3b9cff;
+  color: #3b9cff;
+  background-color: #e2f0ff;
+}
+
+.pop-content .choose-specs {
+  padding: 18rpx 30rpx;
+  line-height: 40rpx;
+  background-color: #f1f1f1;
+  color: #999;
+}
+
+.pop-content .bottom-add {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 30rpx 0;
+}
+
+.pop-content .bottom-add .price {
+  font-size: 30rpx;
+  color: #f00;
+}
+
+.pop-content .bottom-add .price .big {
+  font-size: 42rpx;
+}
+
+.pop-content .bottom-add .btn {
+  position: absolute;
+  bottom: 4rpx;
+  right: 30rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #3b9cff;
+  border-radius: 50rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s linear;
+}
+
+.pop-content .bottom-add .btn-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pop-content .bottom-add .btn-hover {
+  background-color: #65b0fa;
+}
+
+.pop-content .bottom-add .btn .add-icon {
+  margin-right: 12rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.pop-close {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 规格弹窗 - end */

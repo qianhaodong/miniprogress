@@ -1,0 +1,278 @@
+/* 隐藏滚动跳 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.goodsImg {
+  width: 750rpx;
+  height: 500rpx;
+  background: #fff;
+}
+
+.goodsName {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.goodsName .w_95 {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goodsName .number {
+  font-size: 24rpx;
+  color: #999;
+  margin: 15rpx 0;
+}
+
+.goodsName .price {
+  font-size: 28rpx;
+  color: #fe4543;
+  font-weight: bold;
+}
+
+.goodsName .price text {
+  font-size: 36rpx;
+}
+
+.operate .choose-specs-btn {
+  position: relative;
+  padding: 0 20rpx;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #3b9cff;
+  border-radius: 50rpx;
+}
+
+.operate .choose-specs-btn:active {
+  background-color: #65b0fa;
+}
+
+.operate .choose-specs-btn .top-number {
+  position: absolute;
+  top: -24rpx;
+  right: 4rpx;
+  font-size: 24rpx;
+  color: #fff;
+  min-width: 36rpx;
+  background-color: #f55;
+  line-height: 36rpx;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.operate .choose-specs-btn .top-number.big {
+  padding: 0 6rpx;
+}
+
+.goodDes {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  padding: 20rpx 0;
+}
+
+.goodDes view {
+  width: 95%;
+}
+
+.des {
+  margin: 20rpx 0;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.priceBox .addNumberBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.addNumberBox image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.addNumber {
+  margin: 0 15rpx;
+  font-size: 28rpx;
+}
+
+/* 规格弹窗 - start */
+
+.pop-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.pop-mask-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.specs-pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate3d(-50%, -50%, 1px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  z-index: 110;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.specs-pop-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pop-content {
+  margin-bottom: 50rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  width: 100%;
+  padding: 30rpx 0;
+  font-size: 26rpx;
+}
+
+.pop-content .specs-list {
+  padding: 0 30rpx;
+  max-height: 540rpx;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pop-content .pop-title {
+  padding: 0 30rpx;
+  margin-bottom: 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.pop-content .specs {
+  margin-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.specs .attrs-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.specs text {
+  color: #999;
+}
+
+.specs .specs-item {
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  padding: 0 32rpx;
+  line-height: 48rpx;
+  border: 1rpx solid #e2e2e2;
+  border-radius: 8rpx;
+  color: #000;
+}
+
+.specs.spec .specs-item {
+  padding: 0 24rpx;
+}
+
+.specs .specs-item.active {
+  border-color: #3b9cff;
+  color: #3b9cff;
+  background-color: #e2f0ff;
+}
+
+.pop-content .choose-specs {
+  margin-bottom: 30rpx;
+  padding: 18rpx 30rpx;
+  line-height: 40rpx;
+  background-color: #f1f1f1;
+  color: #999;
+}
+
+.pop-content .bottom-add {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.pop-content .bottom-add .price {
+  font-size: 30rpx;
+  color: #f00;
+}
+
+.pop-content .bottom-add .price text {
+  font-size: 42rpx;
+}
+
+.pop-content .bottom-add .btn {
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  padding: 0 24rpx;
+  margin-top: -28rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #3b9cff;
+  border-radius: 50rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s linear;
+}
+
+.pop-content .bottom-add .btn-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pop-content .bottom-add .btn:active {
+  background-color: #65b0fa;
+}
+
+.pop-content .bottom-add .btn image {
+  margin-right: 12rpx;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.pop-close {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 规格弹窗 - end */

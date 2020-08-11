@@ -1,0 +1,65 @@
+
+<!-- 规格弹窗 -->
+<view class="pop-mask {{visible ? 'pop-mask-show' : ''}}" catch:touchmove="stopTouchMove"></view>
+<view class="specs-pop {{visible ? 'specs-pop-show' : ''}}">
+  <view class="pop-content">
+    <view class="pop-title">{{goodsItem.f_name}}</view>
+    <view class="specs-list">
+      <block wx:if="{{goodsItem.foodsSpecs.length}}">
+        <view class="specs spec">
+          <text class="spec-txt">规格</text>
+          <view class="attrs-list">
+            <block wx:for="{{goodsItem.foodsSpecs}}" wx:key="index">
+              <view
+                class="specs-item {{goodsItem.specIndex === index ? 'active' : ''}}"
+                catch:tap="chooseSpecsItem"
+                data-type="specs"
+                data-index="{{index}}"
+              >
+                {{item.fs_name}}（{{item.fs_weight}}）
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{goodsItem.foodsProperties.length}}">
+        <view class="specs" wx:for="{{goodsItem.foodsProperties}}" wx:key="index">
+          <text class="spec-txt">{{item.fp_content}}</text>
+          <view class="attrs-list">
+            <block
+              wx:for="{{item.foodsValues}}"
+              wx:for-item="attrItem"
+              wx:for-index="attrIndex"
+              wx:key="attrIndex"
+            >
+              <view
+                class="specs-item {{goodsItem.attrIndex[index] === attrIndex ? 'active' : ''}}"
+                catch:tap="chooseSpecsItem"
+                data-type="attrs"
+                data-index="{{index}}"
+                data-attr-index="{{attrIndex}}"
+              >
+                {{attrItem.fv_content}}
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="choose-specs">已选规格：{{goodsItem.chooseSpecs}}</view>
+    <view class="bottom-add">
+      <view class="price">￥<text class="big">{{goodsItem.choosePrice}}</text></view>
+      <view class="btn {{goodsItem.attrIndex[goodsItem.attrIndex.length - 1] === 0 ? 'btn-show' : ''}}" hover-class="btn-hover" catch:tap="addCartTap">
+        <image class="add-icon" src="/common/images/plus-icon.png"></image>
+        <text>加入购物车</text>
+      </view>
+      <!-- 属性索引列表最后一项存放商品数量 -->
+      <number-QR
+        quantity="{{goodsItem.attrIndex[goodsItem.attrIndex.length - 1]}}"
+        catch:set-quantity="setQuantity"
+        catch:add-animate="handleAddAnimate"
+      ></number-QR>
+    </view>
+  </view>
+  <image class="pop-close" src="/common/images/swiper-close.png" catch:tap="closePopTap"></image>
+</view>

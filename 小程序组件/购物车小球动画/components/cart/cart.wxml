@@ -1,0 +1,55 @@
+<!-- 购物车 -->
+<view class="shopping-cart" wx:if="{{storeInfo}}">
+	<view class="cart-info" catch:tap="cartPopShowTap">
+		<view class="cart-icon {{goodsNumber ? 'active' : ''}}">
+			<image class="icon-image" src="/common/images/cart-icon.png"></image>
+			<view class="top-number" wx:if="{{goodsNumber}}">{{goodsNumber}}</view>
+		</view>
+		<view class="info">
+			<view class="price" wx:if="{{goodsNumber}}">￥<text class="big">{{goodsPrice}}</text></view>
+      <text>（支持自取）</text>
+		</view>
+	</view>
+	<view class="submit-btn {{ goodsNumber && (storeInfo.tabelMeal == 'ocd' || storeInfo.distribution_type == 0 || localDiffPrice <= 0) ? 'active' : ''}}" catch:tap="submitTap">{{(storeInfo.tabelMeal == 'ocd' || storeInfo.distribution_type == 0 || localDiffPrice <= 0)  ? '去结算' : !goodsNumber ? '￥' + diffPrice + '元起送' : '还差￥' + localDiffPrice + '元起送'}}</view>
+</view>
+
+<!-- 小球 -->
+<view class="ball-container">
+  <block wx:for="{{balls}}" wx:key="index">
+    <view class="ball {{item.show ? 'ball-show' : ''}}" style="{{item.ballStyle || ''}}" bind:transitionend="ballTransitionend" data-index="{{index}}">
+      <view class="ball-inner {{item.show ? 'ball-inner-show' : ''}}" style="{{item.ballInnerStyle || ''}}"></view>
+    </view>
+  </block>
+</view>
+
+<!-- 底部购物车列表 -->
+<view class="pop-mask cart {{cartPopShow ? 'pop-mask-show' : ''}}" catch:tap="cartPopHideTap"></view>
+<view class="cart-list-pop {{cartPopShow ? 'cart-list-pop-show' : ''}}">
+  <view class="top">
+    <text class="title">已选商品</text>
+    <view class="clear" catch:tap="clearCartTap">
+      <image class="clear-icon" src="/common/images/clear-icon.png"></image>
+      <text>清空购物车</text>
+    </view>
+  </view>
+  <view class="content-list cart">
+    <block wx:for="{{cartList}}" wx:key="key">
+      <view class="content-item" wx:if="{{item.f_number}}">
+        <view class="item-info-left">
+          <image class="item-image" src="{{item.f_image}}" mode="aspectFill"></image>
+        </view>
+        <view class="item-info-right">
+          <text class="name">{{item.f_name}}</text>
+          <text class="num">{{item.f_specs}}</text>
+          <view class="add-cart">
+            <view class="price">￥<text class="big">{{item.f_price}}</text></view>
+            <view class="operate">
+              <!-- 商品数量操作组件 -->
+              <number quantity="{{item.f_number}}" catch:set-quantity="setQuantity" catch:add-animate="handleAddAnimate" data-index="{{index}}"></number>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

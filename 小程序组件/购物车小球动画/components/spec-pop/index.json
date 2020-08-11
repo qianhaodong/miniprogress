@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "number-QR": "/components/number/number"
+  }
+}
