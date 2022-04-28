@@ -1,0 +1,33 @@
+.index-wrap {
+    padding: 30rpx;
+    background-color: #fff;
+    font-family: PingFang SC;
+}
+
+.sign-image {
+    width: 100%;
+    height: 280rpx;
+    background-color: #F4F6F9;
+}
+
+.sign-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 280rpx;
+    background-color: #F4F6F9;
+}
+
+.sign-wrap .sign-btn {
+    margin-bottom: 24rpx;
+    font-size: 46rpx;
+    line-height: 66rpx;
+    color: #1E98DA;
+}
+
+.sign-wrap .sign-tips {
+    font-size: 26rpx;
+    line-height: 37rpx;
+    color: #8D9593;
+}

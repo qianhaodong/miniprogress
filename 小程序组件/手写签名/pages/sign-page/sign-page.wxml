@@ -1,0 +1,11 @@
+<canvas
+    type="2d"
+    class="canvas"
+    catch:touchstart="catchtouchstart"
+    catch:touchmove="catchtouchmove"
+></canvas>
+
+<view class="btns">
+    <view class="btn clear" catch:tap="handleClear">清除</view>
+    <view class="btn confirm" catch:tap="handleConfirm">确定</view>
+</view>

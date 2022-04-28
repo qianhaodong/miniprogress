@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/sign-page/sign-page"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "签名",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

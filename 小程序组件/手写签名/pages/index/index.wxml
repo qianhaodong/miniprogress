@@ -1,0 +1,7 @@
+<view class="index-wrap">
+    <image wx:if="{{ signImage }}" class="sign-image" src="{{ signImage }}"></image>
+    <view wx:else="" class="sign-wrap" catch:tap="navToSignPage">
+        <text class="sign-btn">点击签名</text>
+        <text class="sign-tips">签名授权后将用于《xx协议》自动署名</text>
+    </view>
+</view>
